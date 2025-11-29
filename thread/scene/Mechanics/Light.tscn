@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://x1jn6h6qt1uk"]
+
+[ext_resource type="Script" uid="uid://do26ww877jwvu" path="res://scripts/light.gd" id="1_ucn8g"]
+[ext_resource type="Texture2D" uid="uid://e5wldlfeo34s" path="res://assets/Lantern 1 - Beonze and Orange.png" id="2_haytn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdfew"]
+atlas = ExtResource("2_haytn")
+region = Rect2(0, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c03y6"]
+atlas = ExtResource("2_haytn")
+region = Rect2(40, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iuri"]
+atlas = ExtResource("2_haytn")
+region = Rect2(80, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oybjf"]
+atlas = ExtResource("2_haytn")
+region = Rect2(120, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq6gn"]
+atlas = ExtResource("2_haytn")
+region = Rect2(0, 280, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5xjp"]
+atlas = ExtResource("2_haytn")
+region = Rect2(40, 280, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uutpa"]
+atlas = ExtResource("2_haytn")
+region = Rect2(80, 280, 40, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xpt4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdfew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c03y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iuri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oybjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq6gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5xjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uutpa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0fau"]
+
+[node name="Light" type="Area2D" node_paths=PackedStringArray("target")]
+script = ExtResource("1_ucn8g")
+target = NodePath(".")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.3841858e-07, 4.7683716e-07)
+scale = Vector2(0.925, 0.925)
+sprite_frames = SubResource("SpriteFrames_xpt4t")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.536743e-07, 3.8146973e-06)
+scale = Vector2(2.86514, 2.86514)
+shape = SubResource("RectangleShape2D_w0fau")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

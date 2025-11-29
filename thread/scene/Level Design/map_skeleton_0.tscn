@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhcfbggnsdsjb"]
 
-[ext_resource type="Texture2D" uid="uid://dj4gtiw67e8op" path="res://Game Jam .png" id="1_nh158"]
-[ext_resource type="PackedScene" uid="uid://bkobc3gdqdarc" path="res://player.tscn" id="2_artfx"]
+[ext_resource type="Texture2D" path="res://Game Jam .png" id="1_nh158"]
+[ext_resource type="PackedScene" uid="uid://cdyk5xj0fn7ea" path="res://scene/Mechanics/character.tscn" id="2_artfx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6kmp"]
 texture = ExtResource("1_nh158")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dslhvgulwx6x7"]
 
-[ext_resource type="Script" path="res://scripts/shady_x.gd" id="1_3m5xi"]
+[ext_resource type="Script" uid="uid://do75ywy57ym03" path="res://scripts/shady_x.gd" id="1_3m5xi"]
 [ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="1_vrw6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjxo"]
@@ -21,9 +21,3 @@ offset_left = -93.0
 offset_top = -57.0
 offset_right = 110.0
 offset_bottom = -34.0
-
-[node name="Torch" type="Sprite2D" parent="."]
-position = Vector2(-54, -24)
-scale = Vector2(0.299102, 0.286861)
-texture = ExtResource("1_vrw6t")
-flip_v = true
