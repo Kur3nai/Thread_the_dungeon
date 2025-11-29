@@ -1,19 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cml5ec7a2unp0"]
+[gd_scene load_steps=7 format=3 uid="uid://cml5ec7a2unp0"]
 
 [ext_resource type="Script" uid="uid://cwcnxwg0vywo5" path="res://scripts/main.gd" id="1_i81mx"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="2_hu6xg"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="2_ygy10"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="4_6326s"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/shady_x.tscn" id="5_0ha60"]
-[ext_resource type="PackedScene" uid="uid://ccrmueqv6w37v" path="res://scene/Mechanics/MovingPlatform.tscn" id="6_4j5ol"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ie3gd"]
-
-[sub_resource type="Curve2D" id="Curve2D_4j5ol"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 158, -2, 0, 0, 0, 0, 1, -2)
-}
-point_count = 3
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_i81mx")
@@ -32,15 +25,10 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(312, 491)
 
 [node name="Lamp" parent="." instance=ExtResource("4_6326s")]
-position = Vector2(573, 468)
+position = Vector2(628, 468)
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("4_6326s")]
 position = Vector2(168, 485)
 
 [node name="ShadyX" parent="." instance=ExtResource("5_0ha60")]
 position = Vector2(460, 414)
-
-[node name="Path2D" parent="." instance=ExtResource("6_4j5ol")]
-position = Vector2(922, 489)
-curve = SubResource("Curve2D_4j5ol")
-script = null
