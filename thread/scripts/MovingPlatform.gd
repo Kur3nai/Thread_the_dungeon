@@ -3,13 +3,11 @@ extends Path2D
 @export var loop = true
 @export var speed = 2.0
 @export var speed_scale = 1.0
-@export var is_activated: bool = false:
+@export var is_activated: bool = true:
 	set = _set_activated
 	
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-signal move_platform
 
 # This function runs every time 'is_activated' changes
 func _set_activated(new_value: bool):

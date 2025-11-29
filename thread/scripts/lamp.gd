@@ -3,7 +3,7 @@ extends Area2D
 var player_in_area = false
 var player:Node = null
 @onready var torch: Sprite2D = $Torch
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
