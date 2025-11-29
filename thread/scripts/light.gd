@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
 		player = body
-		body.show_message("Press F to pick up the light")
+		body.show_message("Press E to pick up the light")
 		player_in_area = true
 
 
