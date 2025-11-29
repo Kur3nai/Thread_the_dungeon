@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8u1j1oweuw4s"]
+
+[ext_resource type="Texture2D" uid="uid://cnin4tugd6ogx" path="res://assets/gridbase.png" id="1_c1lbh"]
+[ext_resource type="PackedScene" uid="uid://bqjxayfejqiwt" path="res://scene/lantern.tscn" id="2_svt74"]
+[ext_resource type="Script" uid="uid://1olo125eaxjh" path="res://scene/lighting.gd" id="4_d8w7t"]
+[ext_resource type="Shader" uid="uid://ckn6brjisi5tr" path="res://scene/lighting.gdshader" id="4_y15gs"]
+[ext_resource type="PackedScene" uid="uid://cdyk5xj0fn7ea" path="res://scene/character.tscn" id="5_vdh54"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vgrrk"]
+shader = ExtResource("4_y15gs")
+shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/number_of_lights = 1
+shader_parameter/modulate_color = Color(0, 0, 0, 1)
+shader_parameter/light_radius = 0.1
+shader_parameter/ambient_light = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdh54"]
+size = Vector2(1320.38, 20)
+
+[node name="Stage" type="Node2D"]
+scale = Vector2(1.06, 1.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(602, 344)
+scale = Vector2(1.06, 1.06)
+texture = ExtResource("1_c1lbh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Lighting" type="ColorRect" parent="." groups=["lights"]]
+material = SubResource("ShaderMaterial_vgrrk")
+custom_minimum_size = Vector2(1500, 800)
+offset_left = -177.359
+offset_top = -109.434
+offset_right = 1322.64
+offset_bottom = 690.566
+scale = Vector2(1.06, 1.06)
+script = ExtResource("4_d8w7t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Character" parent="." instance=ExtResource("5_vdh54")]
+position = Vector2(286.792, 220.755)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(595.283, 428.302)
+shape = SubResource("RectangleShape2D_vdh54")
+
+[node name="lantern" parent="." instance=ExtResource("2_svt74")]
+position = Vector2(145.283, 269.811)
+scale = Vector2(1.06, 1.06)
