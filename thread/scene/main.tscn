@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cml5ec7a2unp0"]
+[gd_scene load_steps=7 format=3 uid="uid://cml5ec7a2unp0"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_i81mx"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/shady_x.tscn" id="1_otxtt"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Light.tscn" id="2_hu6xg"]
+[ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/door.tscn" id="2_ygy10"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/lamp.tscn" id="4_6326s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ie3gd"]
@@ -16,11 +17,17 @@ position = Vector2(475, 551)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_ie3gd")
 
+[node name="Door" parent="." instance=ExtResource("2_ygy10")]
+position = Vector2(901, 495)
+
 [node name="Light" parent="." instance=ExtResource("2_hu6xg")]
 position = Vector2(312, 491)
 
 [node name="Lamp" parent="." instance=ExtResource("4_6326s")]
 position = Vector2(688, 474)
+
+[node name="Door_linked_lamp" parent="." instance=ExtResource("4_6326s")]
+position = Vector2(168, 485)
 
 [node name="ShadyX" parent="." instance=ExtResource("1_otxtt")]
 position = Vector2(479, 355)

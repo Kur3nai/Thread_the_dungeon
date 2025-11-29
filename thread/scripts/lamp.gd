@@ -16,6 +16,11 @@ func _process(delta: float) -> void:
 		if player_torch.visible:
 			torch.visible = true
 			player_torch.visible = false
+			player.show_message("Press E to take out the torch")
+		elif torch.visible:
+			torch.visible = false
+			player_torch.visible = true
+			player.show_message("Press E to insert the torch")
 		else:
 			player.show_message("You need a torch")
 
@@ -23,10 +28,12 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
 		if torch.visible:
-			body.hide_message()
+			player = body
+			body.show_message("Press E to take out the torch")
+			player_in_area = true
 		else:  
 			player = body
-			body.show_message("Press F to insert the light")
+			body.show_message("Press E to insert the torch")
 			player_in_area = true
 
 
