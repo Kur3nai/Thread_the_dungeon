@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e5wldlfeo34s"
-path="res://.godot/imported/Lantern 1 - Beonze and Orange.png-6520c783eb5fa30abfea2129a19b0244.ctex"
+uid="uid://diqgm1wlmeopo"
+path="res://.godot/imported/Light.png-ed379145a39a5ecc615ce9e8f57febc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Png/Lantern 1 - Beonze and Orange.png"
-dest_files=["res://.godot/imported/Lantern 1 - Beonze and Orange.png-6520c783eb5fa30abfea2129a19b0244.ctex"]
+source_file="res://assets/Png/Light.png"
+dest_files=["res://.godot/imported/Light.png-ed379145a39a5ecc615ce9e8f57febc2.ctex"]
 
 [params]
 

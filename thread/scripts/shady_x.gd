@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 @onready var pick_up: Label = $pick_up
-@onready var torch: Area2D = $"../Light"
-
+@onready var torch: Sprite2D = $Light
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0

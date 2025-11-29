@@ -1,9 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://dslhvgulwx6x7"]
+[gd_scene load_steps=8 format=3 uid="uid://dslhvgulwx6x7"]
 
 [ext_resource type="Script" uid="uid://do75ywy57ym03" path="res://scripts/shady_x.gd" id="1_3m5xi"]
-[ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="1_vrw6t"]
+[ext_resource type="Texture2D" uid="uid://de3ahoh7bj7fk" path="res://assets/Png/Holders.png" id="2_2p7ff"]
+[ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_kxfbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjxo"]
+
+[sub_resource type="Animation" id="Animation_khkme"]
+resource_name = "Idle"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Light:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_2p7ff")]
+}
+
+[sub_resource type="Animation" id="Animation_kxfbm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Light:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_2p7ff")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_210xg"]
+_data = {
+&"Idle": SubResource("Animation_khkme"),
+&"RESET": SubResource("Animation_kxfbm")
+}
 
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
 script = ExtResource("1_3m5xi")
@@ -13,11 +51,25 @@ scale = Vector2(3.25, 3.25)
 shape = SubResource("RectangleShape2D_5vjxo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_vrw6t")
+scale = Vector2(2.1005862, 2.1005862)
+texture = ExtResource("2_kxfbm")
+hframes = 8
+vframes = 8
 
 [node name="pick_up" type="Label" parent="."]
 offset_left = -93.0
 offset_top = -57.0
 offset_right = 110.0
 offset_bottom = -34.0
+
+[node name="Light" type="Sprite2D" parent="."]
+position = Vector2(-48.000004, -48.000004)
+scale = Vector2(1.1937501, 1.1937501)
+texture = ExtResource("2_2p7ff")
+hframes = 5
+vframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_210xg")
+}

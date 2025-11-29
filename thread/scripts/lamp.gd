@@ -4,6 +4,7 @@ var player_in_area = false
 var player:Node = null
 @onready var torch: Sprite2D = $Torch
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	torch.visible = false
@@ -12,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("Interact"):
-		var player_torch = player.get_node("Torch")
+		var player_torch = player.get_node("Light")
 		if player_torch.visible:
 			torch.visible = true
 			player_torch.visible = false

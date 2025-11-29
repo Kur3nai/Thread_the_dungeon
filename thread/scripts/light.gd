@@ -1,11 +1,14 @@
 extends Area2D
 
 @export var target = Node
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 var player:Node = null
 var player_in_area = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	animation_player.play("Torch")  
 	pass # Replace with function body.
 
 
@@ -13,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("Interact"):
 		self.queue_free()
-		var player_torch = player.get_node("Torch")
+		var player_torch = player.get_node("Light")
 		player_torch.visible = true
 
 
