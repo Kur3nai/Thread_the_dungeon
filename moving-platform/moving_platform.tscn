@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cge028qkwhoe6"]
+
+[ext_resource type="Script" uid="uid://dfc2sqv1n1bet" path="res://test_player.gd" id="1_hrpga"]
+[ext_resource type="Script" uid="uid://d1sqche1n3vor" path="res://coin_2d.gd" id="1_q06lf"]
+[ext_resource type="PackedScene" uid="uid://ccrmueqv6w37v" path="res://MovingPlatform.tscn" id="3_f8lbu"]
+[ext_resource type="Curve2D" uid="uid://bnkpmr2jnhvga" path="res://Test.tres" id="4_oaxfr"]
+[ext_resource type="PackedScene" uid="uid://boxbbtvot2ufo" path="res://MovingPlatformWithCue.tscn" id="5_n0cw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1b7n"]
+size = Vector2(507, 202)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q06lf"]
+radius = 17.0
+height = 78.0
+
+[sub_resource type="Curve2D" id="Curve2D_0kgt5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, -4, 0, 0, 0, 0, 499, -5)
+}
+point_count = 2
+
+[node name="MovingPlatform" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(282, 438)
+shape = SubResource("RectangleShape2D_k1b7n")
+
+[node name="TestPlayer" type="CharacterBody2D" parent="."]
+script = ExtResource("1_hrpga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlayer"]
+position = Vector2(513, 36)
+shape = SubResource("CapsuleShape2D_q06lf")
+debug_color = Color(0, 0.6, 0.69803923, 0.47843137)
+
+[node name="Coin" type="Area2D" parent="."]
+script = ExtResource("1_q06lf")
+
+[node name="Path2D" parent="." instance=ExtResource("3_f8lbu")]
+position = Vector2(516, 225)
+curve = ExtResource("4_oaxfr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Path2D2" parent="." instance=ExtResource("5_n0cw3")]
+position = Vector2(507, 125)
+curve = SubResource("Curve2D_0kgt5")
+
+[connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
