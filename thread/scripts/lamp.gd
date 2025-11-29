@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("Interact"):
-		var player_torch = player.get_node("Light")
+		var player_torch = player.get_node("Torch")
 		if player_torch.visible:
 			torch.visible = true
 			player_torch.visible = false

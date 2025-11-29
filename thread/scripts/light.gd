@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("Interact"):
 		self.queue_free()
-		var player_torch = player.get_node("Light")
+		var player_torch = player.get_node("Torch")
 		player_torch.visible = true
 
 
