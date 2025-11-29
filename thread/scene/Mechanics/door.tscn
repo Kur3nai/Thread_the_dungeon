@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://5hopd71o76ui" path="res://assets/Png/Doorxrune.png" id="2_r37s1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70nuj"]
-size = Vector2(26, 32)
+size = Vector2(20, 29)
 
 [sub_resource type="Animation" id="Animation_r37s1"]
 resource_name = "Door_Open"
-length = 3.0
+length = 2.5
 step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -45,6 +45,7 @@ _data = {
 }
 
 [node name="Door" type="Area2D"]
+position = Vector2(58, 22)
 script = ExtResource("1_a3u0x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -53,6 +54,7 @@ hframes = 5
 vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_70nuj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -61,3 +63,4 @@ libraries = {
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
