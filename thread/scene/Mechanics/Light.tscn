@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://x1jn6h6qt1uk"]
 
 [ext_resource type="Script" uid="uid://do26ww877jwvu" path="res://scripts/light.gd" id="1_ucn8g"]
-[ext_resource type="Texture2D" uid="uid://e5wldlfeo34s" path="res://assets/Lantern 1 - Beonze and Orange.png" id="2_haytn"]
+[ext_resource type="Texture2D" uid="uid://e5wldlfeo34s" path="res://assets/Png/Lantern 1 - Beonze and Orange.png" id="2_haytn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdfew"]
 atlas = ExtResource("2_haytn")
