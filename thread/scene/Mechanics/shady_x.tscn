@@ -6,7 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjxo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2p7ff"]
-load_path = "res://.godot/imported/Holders.png-3d9b98161057912f226fbee6ef955391.ctex"
 
 [sub_resource type="Animation" id="Animation_khkme"]
 resource_name = "Idle"
@@ -126,6 +125,7 @@ _data = {
 }
 
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
+position = Vector2(129, 13)
 script = ExtResource("1_3m5xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -146,10 +146,8 @@ offset_bottom = -34.0
 
 [node name="Light" type="Sprite2D" parent="."]
 position = Vector2(-41, -52)
-scale = Vector2(1.3125, 1.3125)
+scale = Vector2(0.2, 0.2)
 texture = SubResource("CompressedTexture2D_2p7ff")
-hframes = 5
-vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
