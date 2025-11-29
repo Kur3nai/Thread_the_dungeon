@@ -18,7 +18,8 @@ position = Vector2(475, 551)
 shape = SubResource("WorldBoundaryShape2D_ie3gd")
 
 [node name="Door" parent="." instance=ExtResource("2_ygy10")]
-position = Vector2(901, 495)
+position = Vector2(897.00006, 498)
+scale = Vector2(2.5, 2.5)
 
 [node name="Light" parent="." instance=ExtResource("2_hu6xg")]
 position = Vector2(312, 491)
@@ -30,4 +31,4 @@ position = Vector2(688, 474)
 position = Vector2(168, 485)
 
 [node name="ShadyX" parent="." instance=ExtResource("5_0ha60")]
-position = Vector2(411, 368)
+position = Vector2(460, 414)
