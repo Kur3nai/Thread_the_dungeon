@@ -3,7 +3,7 @@ extends Sprite2D
 @export var loop := true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var was_visible := false   # Track previous visibility
+var was_visible := false   
 
 func _ready() -> void:
 	was_visible = self.visible
