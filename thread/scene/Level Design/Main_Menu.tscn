@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dteshpvbijrrh"]
 
 [ext_resource type="FontFile" uid="uid://c51amv3ddxsrc" path="res://assets/font/OldeTome.ttf" id="1_hpp8d"]
-[ext_resource type="Script" uid="uid://btdttn7l81why" path="res://scene/Level Design/main_menu.gd" id="1_vnope"]
-[ext_resource type="Script" uid="uid://b5qbewcv4g10s" path="res://scene/Level Design/options_panel.gd" id="3_p3tju"]
-[ext_resource type="Script" uid="uid://vlbaqmuy4qiv" path="res://scene/Level Design/master_volume_slider.gd" id="4_pr30o"]
-[ext_resource type="Script" uid="uid://cidq4epu8hnl4" path="res://scene/Level Design/music_volume_slider.gd" id="5_vqdcv"]
-[ext_resource type="Script" uid="uid://d0blwonoex6ak" path="res://scene/Level Design/sfx_volume_slider.gd" id="6_vqdcv"]
+[ext_resource type="Script" uid="uid://btdttn7l81why" path="res://scripts/main_menu.gd" id="1_vnope"]
+[ext_resource type="Script" uid="uid://b5qbewcv4g10s" path="res://scripts/Setting/options_panel.gd" id="3_p3tju"]
+[ext_resource type="Script" uid="uid://vlbaqmuy4qiv" path="res://scripts/Setting/master_volume_slider.gd" id="4_pr30o"]
+[ext_resource type="Script" uid="uid://cidq4epu8hnl4" path="res://scripts/Setting/music_volume_slider.gd" id="5_vqdcv"]
+[ext_resource type="Script" uid="uid://d0blwonoex6ak" path="res://scripts/Setting/sfx_volume_slider.gd" id="6_vqdcv"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_vnope"]
 color = Color(1, 1, 1, 1)
