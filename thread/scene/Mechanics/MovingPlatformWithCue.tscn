@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_o45ku"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 362, 1)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 1, 0, 0, 0, 0, 362, 1)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ejt"]
 size = Vector2(135, 20)
@@ -52,16 +52,15 @@ _data = {
 [node name="Path2D" type="Path2D"]
 curve = SubResource("Curve2D_o45ku")
 script = ExtResource("1_o45ku")
-loop = false
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-rotation = 0.002762424
+rotation = 0.013157135
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-rotation = 0.002762424
+rotation = 0.013157134
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_n2ejt")

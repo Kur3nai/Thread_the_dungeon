@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cml5ec7a2unp0"]
+[gd_scene load_steps=12 format=3 uid="uid://cml5ec7a2unp0"]
 
 [ext_resource type="Script" uid="uid://cwcnxwg0vywo5" path="res://scripts/main.gd" id="1_i81mx"]
 [ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="2_4j5ol"]
@@ -6,8 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="2_ygy10"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="4_6326s"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="5_0ha60"]
+[ext_resource type="Script" uid="uid://dv4dbs07owvmq" path="res://scripts/lamp_platform.gd" id="6_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://ccrmueqv6w37v" path="res://scene/Mechanics/MovingPlatform.tscn" id="7_of57s"]
+[ext_resource type="PackedScene" uid="uid://boxbbtvot2ufo" path="res://scene/Mechanics/MovingPlatformWithCue.tscn" id="7_p1hux"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ie3gd"]
+
+[sub_resource type="Curve2D" id="Curve2D_of57s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1.5, 1.5, 0, 0, 0, 0, 193, -2, 0, 0, 0, 0, 4, 0)
+}
+point_count = 3
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_i81mx")
@@ -34,9 +43,18 @@ scale = Vector2(2.5, 2.5)
 [node name="Light" parent="." instance=ExtResource("2_hu6xg")]
 position = Vector2(312, 491)
 
-[node name="Lamp" parent="." instance=ExtResource("4_6326s")]
+[node name="Platform_Trigger" parent="." instance=ExtResource("4_6326s")]
 position = Vector2(628, 468)
 scale = Vector2(2, 2)
+script = ExtResource("6_b5f6u")
+
+[node name="Path2D" parent="Platform_Trigger" instance=ExtResource("7_p1hux")]
+position = Vector2(10.5, -56)
+scale = Vector2(0.5, 0.5)
+
+[node name="Path2D2" parent="Platform_Trigger" instance=ExtResource("7_of57s")]
+position = Vector2(4.5, -82)
+curve = SubResource("Curve2D_of57s")
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("4_6326s")]
 position = Vector2(168, 485)
@@ -46,4 +64,5 @@ scale = Vector2(2, 2)
 position = Vector2(460, 414)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 blend_mode = 1
