@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://x1jn6h6qt1uk"]
+[gd_scene load_steps=9 format=3 uid="uid://x1jn6h6qt1uk"]
 
 [ext_resource type="Script" uid="uid://do26ww877jwvu" path="res://scripts/light.gd" id="1_ucn8g"]
 [ext_resource type="Texture2D" uid="uid://diqgm1wlmeopo" path="res://assets/Png/Light.png" id="2_hbdq2"]
@@ -6,6 +6,21 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87sr6"]
 radius = 5.933395
 height = 21.639431
+
+[sub_resource type="Animation" id="Animation_hbdq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_h6eyn"]
 resource_name = "Torch"
@@ -24,28 +39,22 @@ tracks/0/keys = {
 "values": [1, 2, 3, 4, 5, 6]
 }
 
-[sub_resource type="Animation" id="Animation_hbdq2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jachw"]
 _data = {
 &"RESET": SubResource("Animation_hbdq2"),
 &"Torch": SubResource("Animation_h6eyn")
 }
 
-[node name="Light" type="Area2D" node_paths=PackedStringArray("target")]
+[sub_resource type="Gradient" id="Gradient_hbdq2"]
+offsets = PackedFloat32Array(0, 0.82666665)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_87sr6"]
+gradient = SubResource("Gradient_hbdq2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Light" type="Area2D" node_paths=PackedStringArray("target") groups=["light"]]
 script = ExtResource("1_ucn8g")
 target = NodePath(".")
 
@@ -58,6 +67,7 @@ vframes = 3
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-7.6293945e-06, -1.1920929e-07)
 scale = Vector2(2.86514, 2.86514)
 shape = SubResource("CapsuleShape2D_87sr6")
@@ -67,6 +77,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_jachw")
 }
 autoplay = "Torch"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.90588236, 0.2509804, 1)
+texture = SubResource("GradientTexture2D_87sr6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
