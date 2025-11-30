@@ -102,6 +102,7 @@ stream = ExtResource("2_64cbc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_064pr")
+centered = false
 hframes = 4
 vframes = 20
 
