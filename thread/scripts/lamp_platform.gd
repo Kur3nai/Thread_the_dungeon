@@ -11,7 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var platform = get_node_or_null("Path2D") #Change the one in the bracket with the moving platform /node
+	var platform = get_node_or_null("Path2D")
 	var platform1 = get_node_or_null("Path2D2")
 	if player_in_area and Input.is_action_just_pressed("Interact"):
 		var player_torch = player.get_node("Torch")

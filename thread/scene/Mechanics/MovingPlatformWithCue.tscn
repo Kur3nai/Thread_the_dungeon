@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://boxbbtvot2ufo"]
+[gd_scene load_steps=9 format=3 uid="uid://boxbbtvot2ufo"]
 
 [ext_resource type="Script" uid="uid://ddmtjnfk71cu7" path="res://scripts/MovingPlatformWithCue.gd" id="1_o45ku"]
 [ext_resource type="AudioStream" uid="uid://prukohmyj3n" path="res://assets/Audio/opening-bell-421471.mp3" id="2_64cbc"]
+[ext_resource type="Texture2D" uid="uid://f0knroom1nn1" path="res://assets/Png/Platform.png" id="3_064pr"]
 
-[sub_resource type="Curve2D" id="Curve2D_o45ku"]
+[sub_resource type="Curve2D" id="Curve2D_064pr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 1, 0, 0, 0, 0, 362, 1)
+"points": PackedVector2Array(0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 275, 1)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ejt"]
-size = Vector2(135, 20)
+size = Vector2(144.19147, 24.399206)
 
 [sub_resource type="Animation" id="Animation_qlo1x"]
 resource_name = "A_to_B"
@@ -27,6 +28,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.54, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(275, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_n2ejt"]
 length = 0.001
@@ -42,6 +55,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3wxw"]
 _data = {
@@ -50,29 +75,36 @@ _data = {
 }
 
 [node name="Path2D" type="Path2D"]
-curve = SubResource("Curve2D_o45ku")
+curve = SubResource("Curve2D_064pr")
 script = ExtResource("1_o45ku")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-rotation = 0.013157135
+position = Vector2(2, 1)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-rotation = 0.013157134
+position = Vector2(275, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-6.2461696, 0.3322086)
 shape = SubResource("RectangleShape2D_n2ejt")
 one_way_collision = true
+
+[node name="OpeningBell421471" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(50, 72)
+stream = ExtResource("2_64cbc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_064pr")
+hframes = 4
+vframes = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_u3wxw")
 }
-
-[node name="OpeningBell421471" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(50, 72)
-stream = ExtResource("2_64cbc")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
