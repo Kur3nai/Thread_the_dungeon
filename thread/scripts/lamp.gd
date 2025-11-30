@@ -9,7 +9,6 @@ var player:Node = null
 func _ready() -> void:
 	torch.visible = false
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("Interact"):

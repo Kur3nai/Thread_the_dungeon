@@ -136,7 +136,6 @@ _data = {
 }
 
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
-position = Vector2(288, 123)
 script = ExtResource("1_3m5xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -154,9 +153,11 @@ offset_left = -93.0
 offset_top = -57.0
 offset_right = 110.0
 offset_bottom = -34.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Torch" parent="." instance=ExtResource("3_kxfbm")]
 position = Vector2(-83, -66)
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

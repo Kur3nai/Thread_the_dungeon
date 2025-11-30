@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://wnvlnsgd0l1o"]
+[gd_scene load_steps=13 format=3 uid="uid://wnvlnsgd0l1o"]
 
 [ext_resource type="Script" uid="uid://b70cwdkama0i1" path="res://scripts/door.gd" id="1_a3u0x"]
 [ext_resource type="Texture2D" uid="uid://5hopd71o76ui" path="res://assets/Png/Doorxrune.png" id="2_r37s1"]
@@ -8,8 +8,8 @@
 size = Vector2(20, 29)
 
 [sub_resource type="Gradient" id="Gradient_7nms5"]
-offsets = PackedFloat32Array(0, 0.42666668)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.68, 0.7733333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.31413794, 0.31413794, 0.31413794, 1, 0.22000003, 0.22000003, 0.22000003, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_t2d2i"]
 gradient = SubResource("Gradient_7nms5")
@@ -45,6 +45,24 @@ tracks/1/keys = {
 "values": [0, 3, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 }
 
+[sub_resource type="Animation" id="Animation_t2d2i"]
+resource_name = "Door_Runes"
+length = 2.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Runes:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8000001, 2, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 0]
+}
+
 [sub_resource type="Animation" id="Animation_7nms5"]
 length = 0.001
 tracks/0/type = "value"
@@ -72,30 +90,21 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_t2d2i"]
-resource_name = "Door_Runes"
-length = 2.4
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Runes:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8000001, 2, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t2d2i"]
 _data = {
 &"Door_Open": SubResource("Animation_r37s1"),
 &"Door_Runes": SubResource("Animation_t2d2i"),
 &"RESET": SubResource("Animation_7nms5")
 }
+
+[sub_resource type="Gradient" id="Gradient_t2d2i"]
+offsets = PackedFloat32Array(0, 0.6066667)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_enwlv"]
+gradient = SubResource("Gradient_t2d2i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Door" type="Area2D"]
 script = ExtResource("1_a3u0x")
@@ -106,10 +115,12 @@ hframes = 5
 vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_70nuj")
 
 [node name="Runes" type="Sprite2D" parent="."]
+light_mask = 2
 visibility_layer = 2
 position = Vector2(-1.1920929e-07, -2.0000005)
 scale = Vector2(0.5769231, 0.5769231)
@@ -118,19 +129,19 @@ hframes = 5
 vframes = 5
 
 [node name="PointLight2D" type="PointLight2D" parent="Runes"]
-position = Vector2(2.3841858e-07, -3.4666655)
-scale = Vector2(0.19947918, 0.19947918)
-color = Color(0.39215687, 0.7058824, 0.7176471, 1)
-energy = 1.99
-range_layer_min = 2
-range_layer_max = 2
-range_item_cull_mask = 0
+position = Vector2(2.0662944e-07, -3.4666662)
+scale = Vector2(0.20937501, 0.20937501)
+range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_t2d2i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_t2d2i")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.66406244, 0.66406244)
+texture = SubResource("GradientTexture2D_enwlv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -95,7 +95,6 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Torch" type="Sprite2D"]
 scale = Vector2(2, 2)
 texture = ExtResource("1_sbi8s")
-centered = false
 hframes = 5
 vframes = 3
 script = ExtResource("2_too18")
@@ -106,6 +105,6 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(16, 15)
+position = Vector2(0, 0.5)
 color = Color(1, 1, 0.28235295, 1)
 texture = SubResource("GradientTexture2D_2v3pk")
