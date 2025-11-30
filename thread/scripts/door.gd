@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 		monitoring = false
 		visible = false
 		animation_player.stop()
+		has_played = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):

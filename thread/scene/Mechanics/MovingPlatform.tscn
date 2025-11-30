@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ccrmueqv6w37v"]
 
 [ext_resource type="Script" uid="uid://b10hcrn4lt8u6" path="res://scripts/MovingPlatform.gd" id="1_c7fon"]
-[ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="2_oo3yf"]
+[ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="2_oo3yf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v42y"]
 size = Vector2(146.00308, 20)
@@ -48,9 +48,12 @@ _data = {
 script = ExtResource("1_c7fon")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.9999948, 3.000002)
-scale = Vector2(1.1249999, 0.15625)
+position = Vector2(15, -2)
+scale = Vector2(1.6298078, 1.1781249)
 texture = ExtResource("2_oo3yf")
+hframes = 4
+vframes = 15
+frame = 28
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(2, 3)

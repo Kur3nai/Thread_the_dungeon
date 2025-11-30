@@ -23,6 +23,52 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 3, 3]
 }
 
+[sub_resource type="Animation" id="Animation_7v60v"]
+resource_name = "Jumping"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.072496906, 0.16388316, 0.26471412, 0.36554503),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [19, 18, 17, 16, 18]
+}
+
+[sub_resource type="Animation" id="Animation_df1i4"]
+resource_name = "Player_Torch"
+length = 4.0
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-83, -66), Vector2(-44, -95), Vector2(6, -72), Vector2(40, -105), Vector2(68, -69), Vector2(69, -112), Vector2(35, -81), Vector2(15, -109), Vector2(-15, -82), Vector2(-52, -105)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torch:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 5, 4, 3]
+}
+
 [sub_resource type="Animation" id="Animation_kxfbm"]
 length = 0.001
 tracks/0/type = "value"
@@ -47,30 +93,24 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-60, -64)]
+"values": [Vector2(-83, -66)]
 }
-
-[sub_resource type="Animation" id="Animation_df1i4"]
-resource_name = "Torch"
-length = 3.0
-loop_mode = 2
-step = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Torch:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 1.8, 2.2, 2.6, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-34, -84), Vector2(-30, -86), Vector2(-0.99998665, -67), Vector2(36.00001, -85), Vector2(65.00001, -102), Vector2(56.750015, -100.5), Vector2(17.000008, -75), Vector2(-26.000008, -100), Vector2(-66.000015, -67)]
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torch:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_lns0y"]
 resource_name = "Walking"
-length = 2.0
+length = 1.4
 loop_mode = 1
 step = 0.5
 tracks/0/type = "value"
@@ -80,34 +120,18 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"times": PackedFloat32Array(0, 0.33175313, 0.7219441, 1.1276276),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [8, 9, 10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_7v60v"]
-resource_name = "Jumping"
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [19, 18, 17, 16, 18]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_210xg"]
 _data = {
 &"Idle": SubResource("Animation_khkme"),
 &"Jumping": SubResource("Animation_7v60v"),
+&"Player_Torch": SubResource("Animation_df1i4"),
 &"RESET": SubResource("Animation_kxfbm"),
-&"Torch": SubResource("Animation_df1i4"),
 &"Walking": SubResource("Animation_lns0y")
 }
 
@@ -116,7 +140,6 @@ position = Vector2(288, 123)
 script = ExtResource("1_3m5xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 scale = Vector2(3.25, 3.25)
 shape = SubResource("RectangleShape2D_5vjxo")
 
@@ -133,11 +156,9 @@ offset_right = 110.0
 offset_bottom = -34.0
 
 [node name="Torch" parent="." instance=ExtResource("3_kxfbm")]
-visible = false
-position = Vector2(-60, -64)
+position = Vector2(-83, -66)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_210xg")
 }
-autoplay = "Torch"
