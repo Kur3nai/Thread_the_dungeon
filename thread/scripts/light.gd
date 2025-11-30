@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		self.queue_free()
 		var player_torch = player.get_node("Torch")
 		player_torch.visible = true
-		animation_player.play("Player_interation")
+		animation_player.play("Player_Torch")
 
 
 func _on_body_entered(body: Node2D) -> void:
