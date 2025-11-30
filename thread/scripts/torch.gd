@@ -1,20 +1,22 @@
 extends Sprite2D
-@export var loop = true
+
+@export var loop := true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var was_visible := false   # Track previous visibility
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not self.visible:
-		animation_player.stop()
-	else:
+	was_visible = self.visible
+	
+	if visible:
 		animation_player.play("Torch")
+	else:
+		animation_player.stop()
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not self.visible:
-		animation_player.stop()
-	else:
-		animation_player.play("Torch")
+	if visible != was_visible:
+		was_visible = visible
+		if visible:
+			animation_player.play("Player_interaction")
+		else:
+			animation_player.stop()

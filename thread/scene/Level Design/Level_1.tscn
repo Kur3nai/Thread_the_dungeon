@@ -482,15 +482,5 @@ tile_set = SubResource("TileSet_66fqn")
 tile_map_data = PackedByteArray("AAASAAoAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_a8ok0")
 
-[node name="player" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(37, 589)
-script = null
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1

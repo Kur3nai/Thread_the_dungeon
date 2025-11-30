@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cml5ec7a2unp0"]
+[gd_scene load_steps=8 format=3 uid="uid://cml5ec7a2unp0"]
 
 [ext_resource type="Script" uid="uid://cwcnxwg0vywo5" path="res://scripts/main.gd" id="1_i81mx"]
+[ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="2_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="2_hu6xg"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="2_ygy10"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="4_6326s"]
@@ -10,6 +11,15 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_i81mx")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.5, 321.5)
+scale = Vector2(9.0546875, 5.0546875)
+texture = ExtResource("2_4j5ol")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Icon"]
+blend_mode = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(475, 551)
