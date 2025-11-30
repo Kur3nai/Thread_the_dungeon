@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://bhcfbggnsdsjb"]
+[gd_scene load_steps=21 format=4 uid="uid://bhcfbggnsdsjb"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_s6gvh"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="3_bqeqd"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="4_bqeqd"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="5_a8wv2"]
 [ext_resource type="PackedScene" uid="uid://cu21qi0x51y8f" path="res://scene/Mechanics/Placement_Torch.tscn" id="5_bqeqd"]
+[ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="5_jyb8g"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="5_x4vcx"]
+[ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="8_mfcyg"]
+[ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="9_6x7h6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6kmp"]
 texture_region_size = Vector2i(32, 16)
@@ -456,6 +459,15 @@ tile_size = Vector2i(32, 16)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gp1id")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iab5d"]
+texture = ExtResource("8_mfcyg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2g8lx"]
+texture = ExtResource("8_mfcyg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pq22v"]
+texture = ExtResource("8_mfcyg")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -478,6 +490,7 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_cabnn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 blend_mode = 1
 
 [node name="Door" parent="." instance=ExtResource("4_bqeqd")]
@@ -487,8 +500,53 @@ scale = Vector2(3, 3)
 [node name="Door_linked_lamp" parent="." instance=ExtResource("5_a8wv2")]
 position = Vector2(1027, 587)
 
+[node name="Text_interacter" parent="." instance=ExtResource("5_jyb8g")]
+position = Vector2(483, 436)
+
 [node name="PlacementTorch" parent="." instance=ExtResource("5_bqeqd")]
 position = Vector2(537, 288)
 
 [node name="ShadyX" parent="." instance=ExtResource("5_x4vcx")]
 position = Vector2(83, 585)
+
+[node name="Letter" type="Button" parent="."]
+visible = false
+offset_left = 168.0
+offset_top = 166.99997
+offset_right = 546.0
+offset_bottom = 328.99997
+scale = Vector2(2.0892298, 1.894581)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxTexture_iab5d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2g8lx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pq22v")
+alignment = 0
+script = ExtResource("9_6x7h6")
+
+[node name="Letter_word" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 59.830666
+offset_top = 25.335438
+offset_right = 680.8307
+offset_bottom = 294.33545
+scale = Vector2(0.46989048, 0.55206156)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Dear Madoc,
+
+Evacuations have begun and the monsters are coming. 
+Remind the people that Luminus will lead the way forth. 
+
+Paos
+"
+
+[node name="Label" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 138.32849
+offset_top = 117.17633
+offset_right = 238.32849
+offset_bottom = 140.17633
+theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
+text = "Click to close"
+
+[connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
