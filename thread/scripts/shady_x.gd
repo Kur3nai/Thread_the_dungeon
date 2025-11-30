@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var torch: Sprite2D = $Torch
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -450.0
 
 func _ready() -> void:
 	torch.visible = false

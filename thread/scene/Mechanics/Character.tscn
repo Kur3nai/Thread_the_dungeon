@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dslhvgulwx6x7"]
+[gd_scene load_steps=13 format=3 uid="uid://dslhvgulwx6x7"]
 
 [ext_resource type="Script" uid="uid://do75ywy57ym03" path="res://scripts/shady_x.gd" id="1_3m5xi"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_kxfbm"]
 [ext_resource type="PackedScene" uid="uid://c6f5tnsbna446" path="res://scene/Mechanics/Torch.tscn" id="3_bwebn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjxo"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwebn"]
+radius = 7.6923046
+height = 21.53846
 
 [sub_resource type="Animation" id="Animation_khkme"]
 resource_name = "Idle"
@@ -87,6 +89,15 @@ _data = {
 &"Walking": SubResource("Animation_lns0y")
 }
 
+[sub_resource type="Gradient" id="Gradient_too18"]
+offsets = PackedFloat32Array(0, 0.74)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bwebn"]
+gradient = SubResource("Gradient_too18")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
 position = Vector2(100, 90)
 script = ExtResource("1_3m5xi")
@@ -94,7 +105,7 @@ script = ExtResource("1_3m5xi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.9999924, 2)
 scale = Vector2(3.25, 3.25)
-shape = SubResource("RectangleShape2D_5vjxo")
+shape = SubResource("CapsuleShape2D_bwebn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
@@ -117,3 +128,9 @@ position = Vector2(-100, -88)
 libraries = {
 &"": SubResource("AnimationLibrary_210xg")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1.9999981, 2)
+scale = Vector2(1.71875, 1.421875)
+color = Color(1, 1, 0.28235295, 1)
+texture = SubResource("GradientTexture2D_bwebn")
