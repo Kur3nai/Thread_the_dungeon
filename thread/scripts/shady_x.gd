@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var pick_up: Label = $pick_up
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var torch: Node2D = $PlacementTorch
+@onready var torch: Sprite2D = $Torch
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu21qi0x51y8f"]
-
-[ext_resource type="PackedScene" uid="uid://c6f5tnsbna446" path="res://scene/Mechanics/Torch.tscn" id="1_r53p7"]
-
-[node name="PlacementTorch" type="Node2D"]
-
-[node name="Torch" parent="." instance=ExtResource("1_r53p7")]
