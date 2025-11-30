@@ -14,23 +14,43 @@ const scene_map := {
 	"Scene 3": Level3
 }
 
+
+@onready var music_volume_bus = AudioServer.get_bus_index("Music")
+
 func _ready():
 	_on_scene_changed("Main")
 
 func _on_scene_changed(new_scene):
 	if new_scene == null:
 		return
-	
 	var scene_name:String = new_scene
-
 	if scene_map.has(scene_name):
-		var target_music:String = scene_map[scene_name]
-		_play_if_different(target_music, )
+		var next_stream = load(scene_map[scene_name])
+		if stream != next_stream:
+			fade_to(next_stream, 1.5)  # 1.5 seconds fade	var target_music:String = scene_map[scene_name]
 
-func _play_if_different(stream_path: String):
-	var stream := load(stream_path)
-	if music_player.stream == stream:
-		return
-
-	music_player.stream = stream
-	music_player.play()
+func fade_to(new_stream: AudioStream, duration: float = 1.0) -> void:
+	var start_vol_db = music_player.volume_db
+	var end_vol_db = -80.0  # minimum volume = silent
+	
+	# Fade out
+	var time_passed = 0.0
+	while time_passed < duration:
+		var t = time_passed / duration
+		volume_db = lerp(start_vol_db, end_vol_db, t)
+		await get_tree().process_frame
+		time_passed += get_process_delta_time()
+	
+	# Switch stream
+	stream = new_stream
+	play()
+	
+	# Fade in
+	time_passed = 0.0
+	while time_passed < duration:
+		var t = time_passed / duration
+		volume_db = lerp(end_vol_db, start_vol_db, t)
+		await get_tree().process_frame
+		time_passed += get_process_delta_time()
+	
+	volume_db = start_vol_db  # ensure final volume is exact
