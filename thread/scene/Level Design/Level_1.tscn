@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=4 uid="uid://bhcfbggnsdsjb"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_s6gvh"]
-[ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="2_fcmw4"]
-[ext_resource type="PackedScene" uid="uid://c6f5tnsbna446" path="res://scene/Mechanics/Torch.tscn" id="3_a8wv2"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="3_bqeqd"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="4_bqeqd"]
+[ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="5_a8wv2"]
+[ext_resource type="PackedScene" uid="uid://cu21qi0x51y8f" path="res://scene/Mechanics/Placement_Torch.tscn" id="5_bqeqd"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="5_x4vcx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6kmp"]
@@ -458,11 +458,6 @@ sources/0 = SubResource("TileSetAtlasSource_gp1id")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577, 352.00003)
-scale = Vector2(9.0390625, 5.4765625)
-texture = ExtResource("2_fcmw4")
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_msghi")
 format = 2
@@ -483,13 +478,17 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_cabnn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 blend_mode = 1
 
-[node name="Torch" parent="." instance=ExtResource("3_a8wv2")]
-
 [node name="Door" parent="." instance=ExtResource("4_bqeqd")]
-position = Vector2(1123, 624)
+position = Vector2(1098, 592)
+scale = Vector2(3, 3)
+
+[node name="Door_linked_lamp" parent="." instance=ExtResource("5_a8wv2")]
+position = Vector2(1027, 587)
+
+[node name="PlacementTorch" parent="." instance=ExtResource("5_bqeqd")]
+position = Vector2(537, 288)
 
 [node name="ShadyX" parent="." instance=ExtResource("5_x4vcx")]
-position = Vector2(90, 546)
+position = Vector2(83, 585)

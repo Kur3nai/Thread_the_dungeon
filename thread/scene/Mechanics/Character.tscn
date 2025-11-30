@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://do75ywy57ym03" path="res://scripts/shady_x.gd" id="1_3m5xi"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_kxfbm"]
-[ext_resource type="PackedScene" uid="uid://c6f5tnsbna446" path="res://scene/Mechanics/Torch.tscn" id="3_kxfbm"]
+[ext_resource type="PackedScene" uid="uid://cu21qi0x51y8f" path="res://scene/Mechanics/Placement_Torch.tscn" id="3_bwebn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjxo"]
 
@@ -47,26 +47,14 @@ step = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Torch:frame")
+tracks/0/path = NodePath("PlacementTorch:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6000001),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0, 1, 2, 3, 4, 5, 6, 5, 4, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Torch:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-83, -66), Vector2(-44, -95), Vector2(6, -72), Vector2(40, -105), Vector2(68, -69), Vector2(69, -112), Vector2(35, -81), Vector2(15, -109), Vector2(-15, -82), Vector2(-52, -105)]
+"values": [Vector2(-155, -94), Vector2(-105, -138), Vector2(-35, -105), Vector2(9, -132), Vector2(48, -102), Vector2(35, -132), Vector2(-7, -105), Vector2(-43, -130), Vector2(-82, -97), Vector2(-126, -123)]
 }
 
 [sub_resource type="Animation" id="Animation_kxfbm"]
@@ -86,26 +74,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Torch:frame")
+tracks/1/path = NodePath("PlacementTorch:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Torch:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-83, -66)]
+"values": [Vector2(-155, -94)]
 }
 
 [sub_resource type="Animation" id="Animation_lns0y"]
@@ -136,15 +112,16 @@ _data = {
 }
 
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
+position = Vector2(1, -1)
 script = ExtResource("1_3m5xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(122, 80)
+position = Vector2(-0.9999924, 2)
 scale = Vector2(3.25, 3.25)
 shape = SubResource("RectangleShape2D_5vjxo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(122, 80)
+position = Vector2(0, 2)
 scale = Vector2(2.1005862, 2.1005862)
 texture = ExtResource("2_kxfbm")
 hframes = 8
@@ -157,8 +134,8 @@ offset_right = 230.0
 offset_bottom = 47.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Torch" parent="." instance=ExtResource("3_kxfbm")]
-position = Vector2(-83, -66)
+[node name="PlacementTorch" parent="." instance=ExtResource("3_bwebn")]
+position = Vector2(-155, -94)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	var platform = get_node_or_null("Path2D")
 	var platform1 = get_node_or_null("Path2D2")
 	if player_in_area and Input.is_action_just_pressed("Interact"):
-		var player_torch = player.get_node("Torch")
+		var player_torch = player.get_node("PlacementTorch")
 		platform.move_platform = true
 		platform.set_process(true)
 		platform1.move_platform = true
