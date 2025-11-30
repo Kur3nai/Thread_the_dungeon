@@ -1,10 +1,13 @@
-[gd_scene load_steps=19 format=4 uid="uid://b3qyh727u1wl1"]
+[gd_scene load_steps=25 format=4 uid="uid://b3qyh727u1wl1"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_40f36"]
 [ext_resource type="Texture2D" uid="uid://diqgm1wlmeopo" path="res://assets/Png/Light.png" id="2_bwpkl"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_w03c6"]
 [ext_resource type="Texture2D" uid="uid://5hopd71o76ui" path="res://assets/Png/Doorxrune.png" id="3_ta5ne"]
 [ext_resource type="Texture2D" uid="uid://de3ahoh7bj7fk" path="res://assets/Png/Holders.png" id="4_owmyp"]
+[ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="6_4myy0"]
+[ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="6_frkvs"]
+[ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="7_frkvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grbyn"]
 texture_region_size = Vector2i(32, 16)
@@ -432,6 +435,15 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_snxyp")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_on6bp"]
+texture = ExtResource("6_4myy0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4myy0"]
+texture = ExtResource("6_4myy0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3u4f"]
+texture = ExtResource("6_4myy0")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -463,3 +475,53 @@ tile_set = SubResource("TileSet_jj7ni")
 [node name="holder" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAAPAA4AAAADAAEAAAA=")
 tile_set = SubResource("TileSet_poxxc")
+
+[node name="Text_interacter" parent="." instance=ExtResource("6_frkvs")]
+position = Vector2(1107, 272)
+
+[node name="Letter" type="Button" parent="."]
+visible = false
+offset_left = 168.0
+offset_top = 166.99997
+offset_right = 546.0
+offset_bottom = 328.99997
+scale = Vector2(2.0892298, 1.894581)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxTexture_on6bp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4myy0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e3u4f")
+alignment = 0
+script = ExtResource("7_frkvs")
+
+[node name="Letter_word" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 52.650986
+offset_top = 21.64069
+offset_right = 945.651
+offset_bottom = 328.6407
+scale = Vector2(0.31266913, 0.3133794)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "To any commanding officer available:
+
+Reports of a group of monsters breaking away from the main path have surfaced.
+Their directions point towards the town of Kaltahar.
+By order of the High Council of Arms, you are to rally your soldiers and intercept 
+this convoy.
+
+May Luminarus strengthen your resolve and guide you to victory.
+
+Regards,
+Cadfael Berwyn
+"
+
+[node name="Label" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 138.32849
+offset_top = 117.17633
+offset_right = 238.32849
+offset_bottom = 140.17633
+theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
+text = "Click to close"
+
+[connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]

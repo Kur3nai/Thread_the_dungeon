@@ -1,10 +1,13 @@
-[gd_scene load_steps=19 format=4 uid="uid://6um8c578hlxn"]
+[gd_scene load_steps=25 format=4 uid="uid://6um8c578hlxn"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_2ovjv"]
 [ext_resource type="Texture2D" uid="uid://diqgm1wlmeopo" path="res://assets/Png/Light.png" id="2_3f8jb"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_f7iut"]
 [ext_resource type="Texture2D" uid="uid://5hopd71o76ui" path="res://assets/Png/Doorxrune.png" id="3_dfp0i"]
 [ext_resource type="Texture2D" uid="uid://de3ahoh7bj7fk" path="res://assets/Png/Holders.png" id="4_gctpp"]
+[ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="6_p01ry"]
+[ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="6_pha0w"]
+[ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="7_p01ry"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xhbd"]
 texture_region_size = Vector2i(32, 16)
@@ -493,6 +496,15 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_nv357")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_it3mi"]
+texture = ExtResource("6_pha0w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pha0w"]
+texture = ExtResource("6_pha0w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58yh0"]
+texture = ExtResource("6_pha0w")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -524,3 +536,48 @@ tile_set = SubResource("TileSet_xjatp")
 [node name="holder" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAAbABIAAAADAAEAAAAaAAcAAAADAAEAAAAMAAEAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_iiid7")
+
+[node name="Text_interacter" parent="." instance=ExtResource("6_p01ry")]
+position = Vector2(1107, 319)
+
+[node name="Letter" type="Button" parent="."]
+visible = false
+offset_left = 168.0
+offset_top = 166.99997
+offset_right = 546.0
+offset_bottom = 328.99997
+scale = Vector2(2.0892298, 1.894581)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxTexture_it3mi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pha0w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_58yh0")
+alignment = 0
+script = ExtResource("7_p01ry")
+
+[node name="Letter_word" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 56.958794
+offset_top = 17.418118
+offset_right = 668.9588
+offset_bottom = 231.41812
+scale = Vector2(0.439253, 0.5268741)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Whoever may yet be alive
+
+I hope you may face a better fate than us. 
+Beyond this door is a tunnel system used by rogues of the
+Red Moon Cartel. Beware of its traps and what may lie at 
+the end of the tunnel."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 138.32849
+offset_top = 117.17633
+offset_right = 238.32849
+offset_bottom = 140.17633
+theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
+text = "Click to close"
+
+[connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]

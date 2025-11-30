@@ -1,9 +1,12 @@
-[gd_scene load_steps=16 format=4 uid="uid://5hgo02n1gd6j"]
+[gd_scene load_steps=22 format=4 uid="uid://5hgo02n1gd6j"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_kemnw"]
 [ext_resource type="Texture2D" uid="uid://5hopd71o76ui" path="res://assets/Png/Doorxrune.png" id="2_2464j"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_fsml6"]
 [ext_resource type="Texture2D" uid="uid://diqgm1wlmeopo" path="res://assets/Png/Light.png" id="3_882nl"]
+[ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="5_4kr5r"]
+[ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="5_rymmj"]
+[ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="6_4kr5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lu1u"]
 texture_region_size = Vector2i(32, 16)
@@ -486,6 +489,15 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ds8r5")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_npl02"]
+texture = ExtResource("5_rymmj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rymmj"]
+texture = ExtResource("5_rymmj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dktqr"]
+texture = ExtResource("5_rymmj")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -513,3 +525,49 @@ tile_set = SubResource("TileSet_c8ggh")
 [node name="light" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAAiABIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_sj45t")
+
+[node name="Text_interacter" parent="." instance=ExtResource("5_4kr5r")]
+position = Vector2(39, 211)
+
+[node name="Letter" type="Button" parent="."]
+visible = false
+offset_left = 168.0
+offset_top = 166.99997
+offset_right = 546.0
+offset_bottom = 328.99997
+scale = Vector2(2.0892298, 1.894581)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxTexture_npl02")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rymmj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dktqr")
+alignment = 0
+script = ExtResource("6_4kr5r")
+
+[node name="Letter_word" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 59.830666
+offset_top = 25.335438
+offset_right = 680.8307
+offset_bottom = 294.33545
+scale = Vector2(0.44845203, 0.5268741)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Dear Gareth, 
+
+We trust your strength in fending them from us.
+The might of Asholm Woods will not compare to Flinthavn.
+May Luminus guide you forth, into glory.
+
+Madoc
+"
+
+[node name="Label" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 138.32849
+offset_top = 117.17633
+offset_right = 238.32849
+offset_bottom = 140.17633
+theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
+text = "Click to close"
+
+[connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]

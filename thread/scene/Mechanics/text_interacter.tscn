@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c71oy03puwipm"]
+
+[ext_resource type="Script" uid="uid://bbmkxqdamceu" path="res://scripts/text_interacter.gd" id="1_l8824"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omkqw"]
+size = Vector2(18.845852, 20)
+
+[node name="Text_interacter" type="Area2D"]
+script = ExtResource("1_l8824")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.3047327, 0)
+scale = Vector2(2.2609468, 1.0532837)
+shape = SubResource("RectangleShape2D_omkqw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -17.000006
+offset_right = 16.0
+offset_bottom = 12.999994
+scale = Vector2(1.3342205, 1.0580833)
+theme_override_font_sizes/font_size = 21
+text = "???"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
