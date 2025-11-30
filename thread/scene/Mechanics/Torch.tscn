@@ -95,6 +95,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Torch" type="Sprite2D"]
 scale = Vector2(2, 2)
 texture = ExtResource("1_sbi8s")
+centered = false
 hframes = 5
 vframes = 3
 script = ExtResource("2_too18")

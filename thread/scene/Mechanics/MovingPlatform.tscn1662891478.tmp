@@ -1,21 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://boxbbtvot2ufo"]
+[gd_scene load_steps=8 format=3 uid="uid://ccrmueqv6w37v"]
 
-[ext_resource type="Script" uid="uid://ddmtjnfk71cu7" path="res://scripts/MovingPlatformWithCue.gd" id="1_o45ku"]
-[ext_resource type="AudioStream" uid="uid://prukohmyj3n" path="res://assets/Audio/opening-bell-421471.mp3" id="2_64cbc"]
-[ext_resource type="Texture2D" uid="uid://f0knroom1nn1" path="res://assets/Png/Platform.png" id="3_064pr"]
+[ext_resource type="Script" uid="uid://b10hcrn4lt8u6" path="res://scripts/MovingPlatform.gd" id="1_c7fon"]
+[ext_resource type="Texture2D" uid="uid://f0knroom1nn1" path="res://assets/Png/Platform.png" id="2_oo3yf"]
 
-[sub_resource type="Curve2D" id="Curve2D_064pr"]
+[sub_resource type="Curve2D" id="Curve2D_oo3yf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 275, 1)
+"points": PackedVector2Array(0, 0, 0, 0, 23, -5, 0, 0, 0, 0, 277, -6, 0, 0, 0, 0, 28, -7)
 }
-point_count = 2
+point_count = 3
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ejt"]
-size = Vector2(144.19147, 24.399206)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v42y"]
+size = Vector2(135.97438, 16.2787)
 
-[sub_resource type="Animation" id="Animation_qlo1x"]
-resource_name = "A_to_B"
+[sub_resource type="Animation" id="Animation_ff573"]
+resource_name = "MovingPlatform"
 length = 2.0
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(-1.54, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -35,13 +35,13 @@ tracks/1/path = NodePath("Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(-1.54, 1),
+"times": PackedFloat32Array(0, 0.008846667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(275, 1)]
+"values": [Vector2(14, -4), Vector2(22, -7), Vector2(264, -8)]
 }
 
-[sub_resource type="Animation" id="Animation_n2ejt"]
+[sub_resource type="Animation" id="Animation_jf1si"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -65,48 +65,51 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(14, -4)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3wxw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bt0ai"]
 _data = {
-&"A_to_B": SubResource("Animation_qlo1x"),
-&"RESET": SubResource("Animation_n2ejt")
+&"MovingPlatform": SubResource("Animation_ff573"),
+&"RESET": SubResource("Animation_jf1si")
 }
 
 [node name="Path2D" type="Path2D"]
-curve = SubResource("Curve2D_064pr")
-script = ExtResource("1_o45ku")
+curve = SubResource("Curve2D_oo3yf")
+script = ExtResource("1_c7fon")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(23, -5)
+rotation = -0.00442475
 rotates = false
-loop = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(23, -5)
+rotation = -0.00442475
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(-6.2461696, 0.3322086)
-shape = SubResource("RectangleShape2D_n2ejt")
+position = Vector2(-6.986657, -3.0309439)
+shape = SubResource("RectangleShape2D_3v42y")
 one_way_collision = true
 
-[node name="OpeningBell421471" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(50, 72)
-stream = ExtResource("2_64cbc")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_064pr")
+position = Vector2(14, -4)
+scale = Vector2(1.4201376, 1.0265625)
+texture = ExtResource("2_oo3yf")
 hframes = 4
 vframes = 20
 
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 2.3561945
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_u3wxw")
+&"": SubResource("AnimationLibrary_bt0ai")
 }
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

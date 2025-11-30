@@ -139,25 +139,26 @@ _data = {
 script = ExtResource("1_3m5xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(122, 80)
 scale = Vector2(3.25, 3.25)
 shape = SubResource("RectangleShape2D_5vjxo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(122, 80)
 scale = Vector2(2.1005862, 2.1005862)
 texture = ExtResource("2_kxfbm")
 hframes = 8
 vframes = 8
 
 [node name="pick_up" type="Label" parent="."]
-offset_left = -93.0
-offset_top = -57.0
-offset_right = 110.0
-offset_bottom = -34.0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 230.0
+offset_bottom = 47.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Torch" parent="." instance=ExtResource("3_kxfbm")]
 position = Vector2(-83, -66)
-centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

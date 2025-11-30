@@ -1,10 +1,10 @@
 extends Path2D
 
-@export var loop = true
+@export var loop = false
 @export var speed = 2.0
 @export var speed_scale = 1.0
 
-@export var move_platform = false
+@export var move_platform = true
 
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

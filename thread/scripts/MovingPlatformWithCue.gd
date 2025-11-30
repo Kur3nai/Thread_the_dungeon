@@ -9,6 +9,7 @@ extends Path2D
 
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
 @onready var end_point_sound: AudioStreamPlayer2D = $OpeningBell421471
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	# Sync the Godot node setting with our script variable
@@ -21,6 +22,8 @@ func _process(delta: float) -> void:
 		
 		# 2. Move the platform
 		path_follow_2d.progress += speed
+		
+		animation_player.play("A_to_B")
 		
 		# 3. Snapshot where we are after moving
 		var current_ratio = path_follow_2d.progress_ratio

@@ -12,7 +12,6 @@ func _process(delta: float) -> void:
 	var linked_lamp_torch = door_linked_lamp.get_node("Torch")
 	if linked_lamp_torch.visible:
 		if not has_played:
-			monitoring = true
 			visible = true
 			animation_player.play("Door_Open")
 			has_played = true
@@ -25,3 +24,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
 		get_tree().reload_current_scene()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Door_Open":
+		monitoring = true
