@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pjm3jq0fu0fh"
+path="res://.godot/imported/A Traveller's Respite.mp3-35761f54ff9a6023df2b04002815a41e.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/A Traveller's Respite.mp3"
+dest_files=["res://.godot/imported/A Traveller's Respite.mp3-35761f54ff9a6023df2b04002815a41e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
