@@ -10,6 +10,7 @@ var has_darkvision:bool = false;
 var vision_size:Vector2 = Vector2(vision_radius, vision_radius);
 @export var vision_cooldown:float = 2.0;
 @export var vision_reduction_speed:float = 3.0;
+@export var base_vision_radius:float = 2.0;
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
@@ -17,6 +18,7 @@ const JUMP_VELOCITY = -450.0
 func _ready() -> void:
 	torch.visible = false
 	pick_up.visible = false
+	light_area.scale = Vector2(base_vision_radius, base_vision_radius);
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -55,7 +57,7 @@ func _activate_darkvision():
 
 func _deactivate_darkvision():
 	var tween = get_tree().create_tween()
-	tween.tween_property(light_area, "scale", Vector2(1,1), 1.0) # 1 second fade-out
+	tween.tween_property(light_area, "scale", Vector2(base_vision_radius, base_vision_radius), 1.0) # 1 second fade-out
 	tween.play()
 	has_darkvision = false
 
