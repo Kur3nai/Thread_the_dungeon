@@ -2,7 +2,7 @@ extends Sprite2D
 
 @export var loop := true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var light_area:PointLight2D = $LightArea;
 var was_visible := false   
 
 func _ready() -> void:
@@ -10,6 +10,7 @@ func _ready() -> void:
 	
 	if visible:
 		animation_player.play("Torch")
+
 	else:
 		animation_player.stop()
 

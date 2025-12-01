@@ -577,16 +577,19 @@ text = "Click to close"
 position = Vector2(1103, 589)
 
 [node name="Lamp" parent="." instance=ExtResource("10_6714m")]
-position = Vector2(51, 601)
+visible = false
+position = Vector2(96, 178)
 
-[node name="Lamp2" parent="." instance=ExtResource("10_6714m")]
+[node name="Lamp2" parent="." node_paths=PackedStringArray("affected_platform") instance=ExtResource("10_6714m")]
 position = Vector2(107, 600)
+affected_platform = NodePath("../Moving Platform")
+platform_holder = true
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("10_6714m")]
 position = Vector2(457, 448)
 
 [node name="ShadyX" parent="." instance=ExtResource("12_6714m")]
-position = Vector2(261, 534)
+position = Vector2(267, 530)
 
 [node name="Moving Platform" parent="." instance=ExtResource("13_mehro")]
 position = Vector2(519, 282)
