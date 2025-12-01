@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de3ahoh7bj7fk" path="res://assets/Png/Holders.png" id="2_yx2qb"]
 
 [sub_resource type="Gradient" id="Gradient_unmrk"]
-offsets = PackedFloat32Array(0, 0.76666665)
+offsets = PackedFloat32Array(0, 0.5933333)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yx2qb"]

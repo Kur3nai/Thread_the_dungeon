@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var light_area:PointLight2D = $LightArea;
-@onready var torch: Sprite2D = $Torch
+@onready var torch: Node2D = $Torch
 var has_darkvision:bool = false;
 @export var vision_radius:float = 8.0;
 var vision_size:Vector2 = Vector2(vision_radius, vision_radius);

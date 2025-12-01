@@ -574,7 +574,7 @@ vision_reduction_speed = 0.1
 letter = NodePath("../Letter")
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_jyb8g")]
-position = Vector2(556, 321)
+position = Vector2(557, 321)
 letter = NodePath("../Letter")
 
 [node name="Letter" type="Button" parent="."]

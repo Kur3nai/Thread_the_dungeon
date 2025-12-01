@@ -147,7 +147,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Torch" parent="." instance=ExtResource("3_bwebn")]
 position = Vector2(-120, -88)
-scale = Vector2(1.5, 1.5)
 
 [node name="LightArea" type="PointLight2D" parent="."]
 position = Vector2(-2, 2)

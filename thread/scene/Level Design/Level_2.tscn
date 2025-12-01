@@ -578,10 +578,9 @@ position = Vector2(1103, 589)
 [node name="Lamp" parent="." instance=ExtResource("10_6714m")]
 position = Vector2(132, 187)
 
-[node name="Lamp2" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("10_6714m")]
+[node name="Lamp2" parent="." instance=ExtResource("10_6714m")]
 visible = false
 position = Vector2(107, 600)
-activated_node = NodePath("")
 platform_holder = true
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("10_6714m")]

@@ -37,7 +37,6 @@ func _process(delta: float) -> void:
 func _manipulate_platform() -> void: 
 	activated_node.is_activated = !activated_node.is_activated;
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
 		if torch.visible:

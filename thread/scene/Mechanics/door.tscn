@@ -8,7 +8,7 @@
 size = Vector2(20, 29)
 
 [sub_resource type="Gradient" id="Gradient_7nms5"]
-offsets = PackedFloat32Array(0, 0.68, 0.7733333, 1)
+offsets = PackedFloat32Array(0, 0.41333333, 0.5133333, 0.7266667)
 colors = PackedColorArray(1, 1, 1, 1, 0.31413794, 0.31413794, 0.31413794, 1, 0.22000003, 0.22000003, 0.22000003, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_t2d2i"]
@@ -115,7 +115,6 @@ hframes = 5
 vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_70nuj")
 
@@ -129,7 +128,7 @@ hframes = 5
 vframes = 5
 
 [node name="LightArea" type="PointLight2D" parent="Runes"]
-position = Vector2(2.0662944e-07, -3.4666662)
+position = Vector2(2.0662944e-07, 2.3841858e-07)
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_t2d2i")
 

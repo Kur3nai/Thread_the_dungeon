@@ -18,6 +18,7 @@ const scene_map := {
 @onready var music_volume_bus = AudioServer.get_bus_index("Music")
 
 func _ready():
+	bus = "Music"
 	_on_scene_changed("Main")
 
 func _on_scene_changed(new_scene):
