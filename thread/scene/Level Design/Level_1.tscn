@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bhcfbggnsdsjb"]
+[gd_scene load_steps=26 format=4 uid="uid://bhcfbggnsdsjb"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_s6gvh"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="3_bqeqd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="9_6x7h6"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_jyb8g"]
 [ext_resource type="PackedScene" uid="uid://b4ar651b2p446" path="res://scene/Mechanics/Vision Rune.tscn" id="10_mfcyg"]
+[ext_resource type="PackedScene" uid="uid://cgu8xkm8fl6x3" path="res://scene/Mechanics/Spike.tscn" id="11_6x7h6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6kmp"]
 texture_region_size = Vector2i(32, 16)
@@ -521,6 +522,17 @@ texture = ExtResource("8_mfcyg")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pq22v"]
 texture = ExtResource("8_mfcyg")
 
+[sub_resource type="LabelSettings" id="LabelSettings_6x7h6"]
+
+[sub_resource type="Gradient" id="Gradient_iab5d"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.50666666, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.3118496, 0.31184962, 0.3118496, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2g8lx"]
+gradient = SubResource("Gradient_iab5d")
+use_hdr = true
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -556,12 +568,14 @@ position = Vector2(1027, 587)
 [node name="Text_interacter" parent="." instance=ExtResource("5_jyb8g")]
 position = Vector2(483, 436)
 
-[node name="ShadyX" parent="." instance=ExtResource("5_x4vcx")]
+[node name="ShadyX" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("5_x4vcx")]
 position = Vector2(83, 585)
 vision_reduction_speed = 0.1
+letter = NodePath("../Letter")
 
-[node name="Light" parent="." instance=ExtResource("9_jyb8g")]
+[node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_jyb8g")]
 position = Vector2(556, 321)
+letter = NodePath("../Letter")
 
 [node name="Letter" type="Button" parent="."]
 visible = false
@@ -595,16 +609,31 @@ Paos
 "
 
 [node name="Label" type="Label" parent="Letter"]
+modulate = Color(0.11091188, 0.098552816, 0.13990334, 1)
 layout_mode = 0
 offset_left = 138.32849
 offset_top = 117.17633
 offset_right = 238.32849
 offset_bottom = 140.17633
 theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Click to close"
+label_settings = SubResource("LabelSettings_6x7h6")
+
+[node name="PointLight2D" type="PointLight2D" parent="Letter"]
+position = Vector2(191.0141, 77.952194)
+scale = Vector2(5.8174505, 2.297891)
+color = Color(1, 1, 0.33333334, 1)
+energy = 0.0
+texture = SubResource("GradientTexture2D_2g8lx")
 
 [node name="Rune" parent="." instance=ExtResource("10_mfcyg")]
 position = Vector2(906.99994, 605)
 scale = Vector2(0.31, 0.31)
 
+[node name="Spike" parent="." instance=ExtResource("11_6x7h6")]
+position = Vector2(223, 622)
+
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
+[connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]
+[connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]

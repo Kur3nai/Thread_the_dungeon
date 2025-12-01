@@ -11,6 +11,7 @@ var vision_size:Vector2 = Vector2(vision_radius, vision_radius);
 @export var vision_cooldown:float = 2.0;
 @export var vision_reduction_speed:float = 3.0;
 @export var base_vision_radius:float = 2.0;
+@export var letter:Button;
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
@@ -75,3 +76,8 @@ func show_message(text):
 
 func hide_message():
 	$pick_up.hide()
+
+func _on_letter_visibility_changed():
+	light_area.visible = !light_area.visible 
+	if torch.was_visible:
+		torch.visible = !torch.visible
