@@ -128,9 +128,8 @@ texture = ExtResource("3_7nms5")
 hframes = 5
 vframes = 5
 
-[node name="PointLight2D" type="PointLight2D" parent="Runes"]
+[node name="LightArea" type="PointLight2D" parent="Runes"]
 position = Vector2(2.0662944e-07, -3.4666662)
-scale = Vector2(0.20937501, 0.20937501)
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_t2d2i")
 

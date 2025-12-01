@@ -4,12 +4,16 @@ var player_in_area = false
 var player:Node = null
 @onready var torch: Sprite2D = $Torch
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@export var affected_platform:Node2D
+@onready var light_area:PointLight2D = torch.get_node("LightArea");
+@export var activated_node:Node2D
 @export var platform_holder:bool = false;
+@export var light_size:float = 10.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	torch.visible = false
+	light_area.scale.x = light_size;
+	light_area.scale.y = light_size;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,7 +35,7 @@ func _process(delta: float) -> void:
 			player.show_message("You need a torch")
 
 func _manipulate_platform() -> void: 
-	affected_platform.is_activated = !affected_platform.is_activated;
+	activated_node.is_activated = !activated_node.is_activated;
 
 
 func _on_body_entered(body: Node2D) -> void:

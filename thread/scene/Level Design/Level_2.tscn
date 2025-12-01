@@ -580,13 +580,14 @@ position = Vector2(1103, 589)
 visible = false
 position = Vector2(96, 178)
 
-[node name="Lamp2" parent="." node_paths=PackedStringArray("affected_platform") instance=ExtResource("10_6714m")]
+[node name="Lamp2" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("10_6714m")]
 position = Vector2(107, 600)
-affected_platform = NodePath("../Moving Platform")
+activated_node = NodePath("../Moving Platform")
 platform_holder = true
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("10_6714m")]
 position = Vector2(457, 448)
+light_size = 3.0
 
 [node name="ShadyX" parent="." instance=ExtResource("12_6714m")]
 position = Vector2(267, 530)
