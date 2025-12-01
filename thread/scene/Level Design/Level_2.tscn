@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_p5ki8"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="10_6714m"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="12_6714m"]
-[ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/NewMovingPlatorm.tscn" id="13_mehro"]
+[ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/HorizontalMovingPlatform.tscn" id="13_mehro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lu1u"]
 texture_region_size = Vector2i(32, 16)
@@ -577,16 +577,21 @@ text = "Click to close"
 position = Vector2(1103, 589)
 
 [node name="Lamp" parent="." instance=ExtResource("10_6714m")]
-position = Vector2(51, 601)
+position = Vector2(132, 187)
 
-[node name="Lamp2" parent="." instance=ExtResource("10_6714m")]
+[node name="Lamp2" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("10_6714m")]
+visible = false
 position = Vector2(107, 600)
+activated_node = NodePath("../Moving Platform")
+platform_holder = true
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("10_6714m")]
+visible = false
 position = Vector2(457, 448)
+light_size = 3.0
 
 [node name="ShadyX" parent="." instance=ExtResource("12_6714m")]
-position = Vector2(261, 534)
+position = Vector2(267, 530)
 
 [node name="Moving Platform" parent="." instance=ExtResource("13_mehro")]
 position = Vector2(519, 282)
