@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_oo3yf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 285, 1, 0, 0, 0, 0, 6, 1)
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -3.5, -1, 0, 0, 0, 0, -13, 4.5, 0, 0, 0, 0, 68, 4.5, 0, 0, 0, 0, 285, 1, 0, 0, 0, 0, 51, 2.5, 0, 0, 0, 0, 31.5, 2.5, 0, 0, 0, 0, 6, 1)
 }
-point_count = 3
+point_count = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v42y"]
 size = Vector2(135.97438, 16.2787)
@@ -31,14 +31,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatableBody2D/Sprite2D:position")
+tracks/1/path = NodePath("PathFollow2D/Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(-1.54, 1, 1),
 "update": 0,
-"values": [Vector2(26, 1), Vector2(219, 0), Vector2(37, 0)]
+"values": [Vector2(26, 1), Vector2(0.48805237, -0.98566926), Vector2(-1.9999809, -0.008849442)]
 }
 
 [sub_resource type="Animation" id="Animation_jf1si"]
@@ -58,7 +58,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatableBody2D/Sprite2D:position")
+tracks/1/path = NodePath("PathFollow2D/Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -79,28 +79,29 @@ curve = SubResource("Curve2D_oo3yf")
 script = ExtResource("1_c7fon")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(31.6868, 1)
 rotation = -0.00442475
+progress = 565.0018
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D"]
+position = Vector2(26, 1)
+rotation = 0.00442475
+scale = Vector2(1.4415733, 1.0265626)
+texture = ExtResource("2_oo3yf")
+hframes = 2
+vframes = 8
+
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(281.5163, 0.98781914)
+position = Vector2(31.6868, 1)
 rotation = -0.00442475
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_3v42y")
 one_way_collision = true
-
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-position = Vector2(26, 1)
-rotation = 0.00442475
-scale = Vector2(1.441573, 1.0265625)
-texture = ExtResource("2_oo3yf")
-hframes = 4
-vframes = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

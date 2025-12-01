@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://28fu2ni6664q" path="res://scripts/lamp_door.gd" id="1_1jqhi"]
 [ext_resource type="Texture2D" uid="uid://de3ahoh7bj7fk" path="res://assets/Png/Holders.png" id="2_yx2qb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qg5f"]
-
 [sub_resource type="Gradient" id="Gradient_unmrk"]
 offsets = PackedFloat32Array(0, 0.9533333)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -13,6 +11,8 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_unmrk")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qg5f"]
 
 [sub_resource type="Animation" id="Animation_yx2qb"]
 length = 0.001
@@ -55,6 +55,11 @@ _data = {
 
 [node name="Lamp" type="Area2D"]
 script = ExtResource("1_1jqhi")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -2)
+color = Color(0.9285016, 0.9702342, 0.97352475, 1)
+texture = SubResource("GradientTexture2D_yx2qb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.92419, 1.92419)
