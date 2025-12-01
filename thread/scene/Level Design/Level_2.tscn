@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://5hgo02n1gd6j"]
+[gd_scene load_steps=26 format=4 uid="uid://5hgo02n1gd6j"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_kemnw"]
 [ext_resource type="Texture2D" uid="uid://5hopd71o76ui" path="res://assets/Png/Doorxrune.png" id="2_2464j"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_p5ki8"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="10_6714m"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="12_6714m"]
-[ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/HorizontalMovingPlatform.tscn" id="13_mehro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lu1u"]
 texture_region_size = Vector2i(32, 16)
@@ -582,7 +581,7 @@ position = Vector2(132, 187)
 [node name="Lamp2" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("10_6714m")]
 visible = false
 position = Vector2(107, 600)
-activated_node = NodePath("../Moving Platform")
+activated_node = NodePath("")
 platform_holder = true
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("10_6714m")]
@@ -593,9 +592,6 @@ light_size = 3.0
 [node name="ShadyX" parent="." instance=ExtResource("12_6714m")]
 position = Vector2(267, 530)
 
-[node name="Moving Platform" parent="." instance=ExtResource("13_mehro")]
-position = Vector2(519, 282)
-move_width = 60.0
-is_activated = false
-
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
+[connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]
+[connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]

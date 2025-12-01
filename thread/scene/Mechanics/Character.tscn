@@ -44,8 +44,20 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_df1i4"]
 resource_name = "Player_Torch"
 length = 4.0
-loop_mode = 1
+loop_mode = 2
 step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-120, -88), Vector2(-77, -125), Vector2(-38, -108), Vector2(22, -150), Vector2(50, -105)]
+}
 
 [sub_resource type="Animation" id="Animation_kxfbm"]
 length = 0.001
@@ -60,6 +72,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torch:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120, -88)]
 }
 
 [sub_resource type="Animation" id="Animation_lns0y"]
@@ -100,6 +124,7 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
 script = ExtResource("1_3m5xi")
+base_vision_radius = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.9999924, 2)
@@ -121,12 +146,13 @@ offset_bottom = 47.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Torch" parent="." instance=ExtResource("3_bwebn")]
-position = Vector2(-100, -88)
+position = Vector2(-120, -88)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_210xg")
 }
+autoplay = "Player_Torch"
 
 [node name="LightArea" type="PointLight2D" parent="."]
 position = Vector2(-1.9999981, 2)

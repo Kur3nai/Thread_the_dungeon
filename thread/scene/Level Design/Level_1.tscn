@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="8_mfcyg"]
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="9_6x7h6"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_jyb8g"]
-[ext_resource type="PackedScene" uid="uid://b4ar651b2p446" path="res://scene/Mechanics/Vision Rune.tscn" id="10_mfcyg"]
-[ext_resource type="PackedScene" uid="uid://cgu8xkm8fl6x3" path="res://scene/Mechanics/Spike.tscn" id="11_6x7h6"]
+[ext_resource type="PackedScene" path="res://scene/Mechanics/Vision Rune.tscn" id="10_mfcyg"]
+[ext_resource type="PackedScene" path="res://scene/Mechanics/Spike.tscn" id="11_6x7h6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6kmp"]
 texture_region_size = Vector2i(32, 16)
@@ -624,7 +624,7 @@ label_settings = SubResource("LabelSettings_6x7h6")
 position = Vector2(191.0141, 77.952194)
 scale = Vector2(5.8174505, 2.297891)
 color = Color(1, 1, 0.33333334, 1)
-energy = 0.0
+energy = 0.5
 texture = SubResource("GradientTexture2D_2g8lx")
 
 [node name="Rune" parent="." instance=ExtResource("10_mfcyg")]

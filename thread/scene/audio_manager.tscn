@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vmm2nuwissof"]
 
-[ext_resource type="Script" uid="uid://dww0t5b5c03m0" path="res://scene/audio_manager.gd" id="1_jisk1"]
+[ext_resource type="Script" uid="uid://dww0t5b5c03m0" path="res://scripts/audio_manager.gd" id="1_jisk1"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 script = ExtResource("1_jisk1")

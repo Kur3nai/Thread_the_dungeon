@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b3qyh727u1wl1"]
+[gd_scene load_steps=29 format=4 uid="uid://b3qyh727u1wl1"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_40f36"]
 [ext_resource type="Texture2D" uid="uid://diqgm1wlmeopo" path="res://assets/Png/Light.png" id="2_bwpkl"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="10_p4ns1"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="11_c8pm5"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="12_rqfpl"]
-[ext_resource type="PackedScene" uid="uid://ccrmueqv6w37v" path="res://scene/Mechanics/MovingPlatform.tscn" id="13_p4ns1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grbyn"]
 texture_region_size = Vector2i(32, 16)
@@ -502,18 +501,6 @@ texture = ExtResource("6_4myy0")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3u4f"]
 texture = ExtResource("6_4myy0")
 
-[sub_resource type="Curve2D" id="Curve2D_p4ns1"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 23, -1, 0, 0, 0, 0, 24, -125.5, 0, 0, 0, 0, 26, -19)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_c8pm5"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 8.5, 2, 0, 0, 0, 0, -116.5, -1.5, 0, 0, 0, 0, -2, 0)
-}
-point_count = 3
-
 [node name="Level3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -601,18 +588,11 @@ position = Vector2(513, 467)
 position = Vector2(1127, 63)
 scale = Vector2(2, 2)
 
-[node name="Path2D2" parent="." instance=ExtResource("13_p4ns1")]
-position = Vector2(300, 478)
-scale = Vector2(2, 2)
-curve = SubResource("Curve2D_p4ns1")
-
-[node name="Path2D" parent="." instance=ExtResource("13_p4ns1")]
-position = Vector2(787, 181)
-scale = Vector2(2, 2)
-curve = SubResource("Curve2D_c8pm5")
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
+[connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]
+[connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]

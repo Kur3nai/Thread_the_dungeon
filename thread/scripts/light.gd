@@ -1,4 +1,4 @@
-extends Area2D
+extends Sprite2D
 
 @export var target = Node
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
