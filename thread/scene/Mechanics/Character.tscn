@@ -99,7 +99,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
-position = Vector2(100, 90)
 script = ExtResource("1_3m5xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -129,7 +128,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_210xg")
 }
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="LightArea" type="PointLight2D" parent="."]
 position = Vector2(-1.9999981, 2)
 scale = Vector2(1.71875, 1.421875)
 color = Color(1, 1, 0.28235295, 1)
