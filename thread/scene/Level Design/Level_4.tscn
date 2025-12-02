@@ -509,7 +509,7 @@ texture = ExtResource("6_pha0w")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58yh0"]
 texture = ExtResource("6_pha0w")
 
-[node name="Level4" type="Node2D"]
+[node name="Level_4" type="Node2D"]
 position = Vector2(1, -1)
 
 [node name="TileMap" type="TileMap" parent="."]

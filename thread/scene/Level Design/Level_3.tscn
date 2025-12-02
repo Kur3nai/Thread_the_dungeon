@@ -501,7 +501,7 @@ texture = ExtResource("6_4myy0")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3u4f"]
 texture = ExtResource("6_4myy0")
 
-[node name="Level3" type="Node2D"]
+[node name="Level_3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ik6wb")
