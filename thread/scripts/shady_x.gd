@@ -10,7 +10,6 @@ var vision_size:Vector2 = Vector2(vision_radius, vision_radius);
 @export var vision_cooldown:float = 2.0;
 @export var vision_reduction_speed:float = 3.0;
 @export var base_vision_radius:float = 2.0;
-@export var letter:Button;
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -450.0
@@ -47,10 +46,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, Global.Speed)
 
-	move_and_slide()
 	if Global.has_darkvision:
 		_activate_darkvision();
 	
+	if !Global.letter_visible:
+		move_and_slide();
+
+	if Global.letter_visible:
+		light_area.visible = false;
+	else:
+		light_area.visible = true;
+
 func _activate_darkvision():
 	light_area.scale = vision_size;
 	_darkvision_timer();
@@ -76,7 +82,4 @@ func show_message(text):
 func hide_message():
 	$pick_up.hide()
 
-func _on_letter_visibility_changed():
-	light_area.visible = !light_area.visible 
-	if torch.was_visible:
-		torch.visible = !torch.visible
+

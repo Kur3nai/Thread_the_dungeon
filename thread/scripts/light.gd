@@ -19,10 +19,11 @@ func _process(delta: float) -> void:
 		self.queue_free()
 		var player_torch = player.get_node("Torch")
 		player_torch.visible = true
-	if letter.visible:
+	
+	if Global.letter_visible:
 		light_area.visible = false;
 	else:
-		light_area.visible = true;
+		light_area.visible = true
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
@@ -36,7 +37,3 @@ func _on_body_exited(body: Node2D) -> void:
 		player = null
 		body.hide_message()
 		player_in_area = false
-
-
-func _on_letter_visibility_changed() -> void:
-	light_area.visible = !light_area.visible
