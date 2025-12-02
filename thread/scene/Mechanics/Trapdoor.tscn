@@ -28,6 +28,8 @@ _data = {
 
 [node name="Trapdoor Manager" type="Node2D"]
 script = ExtResource("1_is55g")
+end_height = 100.0
+trapdoor_speed = 100.0
 
 [node name="Trapdoor" type="Node2D" parent="."]
 
@@ -44,7 +46,7 @@ shape = SubResource("RectangleShape2D_fh1sa")
 [node name="Start" type="Node2D" parent="."]
 
 [node name="End" type="Node2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, 21)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

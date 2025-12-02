@@ -16,7 +16,7 @@ gradient = SubResource("Gradient_too18")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Rune" type="Node2D"]
+[node name="Vision_Rune" type="Node2D"]
 script = ExtResource("1_eaaig")
 
 [node name="Rune Model" type="Sprite2D" parent="."]
