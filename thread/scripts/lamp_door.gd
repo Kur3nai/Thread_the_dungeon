@@ -7,7 +7,7 @@ var player:Node = null
 @onready var light_area:PointLight2D = torch.get_node("LightArea");
 @export var activated_node:Node2D
 @export var platform_holder:bool = false;
-@export var light_size:float = 10.0;
+@export var light_size:float = 4.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

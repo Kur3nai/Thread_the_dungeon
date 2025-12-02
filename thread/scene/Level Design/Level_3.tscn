@@ -528,7 +528,6 @@ tile_map_data = PackedByteArray("AAAPAA4AAAADAAEAAAA=")
 tile_set = SubResource("TileSet_poxxc")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -596,5 +595,5 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
 text = "Click to close"
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
-[connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]
+[connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]

@@ -9,13 +9,14 @@ radius = 7.6923046
 height = 21.53846
 
 [sub_resource type="Gradient" id="Gradient_too18"]
-offsets = PackedFloat32Array(0, 0.74)
+offsets = PackedFloat32Array(0, 0.6666667)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_count = 2
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bwebn"]
 gradient = SubResource("Gradient_too18")
 fill = 1
-fill_from = Vector2(0.5, 0.5)
+fill_from = Vector2(0.5186916, 0.52803737)
 
 [sub_resource type="Animation" id="Animation_khkme"]
 resource_name = "Idle"
@@ -124,15 +125,12 @@ _data = {
 
 [node name="ShadyX" type="CharacterBody2D" groups=["ShadyX"]]
 script = ExtResource("1_3m5xi")
-base_vision_radius = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.9999924, 2)
 scale = Vector2(3.25, 3.25)
 shape = SubResource("CapsuleShape2D_bwebn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 2)
 scale = Vector2(2.1005862, 2.1005862)
 texture = ExtResource("2_kxfbm")
 hframes = 8
@@ -150,9 +148,10 @@ position = Vector2(-120, -88)
 scale = Vector2(1.5, 1.5)
 
 [node name="LightArea" type="PointLight2D" parent="."]
-position = Vector2(-2, 2)
-scale = Vector2(1.7187499, 1.421875)
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(2, 1.654)
 color = Color(1, 1, 0.28235295, 1)
+energy = 1.7
 texture = SubResource("GradientTexture2D_bwebn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
