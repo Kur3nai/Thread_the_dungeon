@@ -556,5 +556,5 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_p5ki8")
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
-[connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]
+[connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]
