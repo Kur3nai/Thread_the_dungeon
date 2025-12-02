@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3xsbs2e6hi6u"]
+[gd_scene load_steps=4 format=3 uid="uid://d3xsbs2e6hi6u"]
 
-[ext_resource type="Texture2D" uid="uid://q060ku8lguli" path="res://assets/Png/Game Jam  Interactibles.png" id="1_hgld0"]
+[ext_resource type="Script" uid="uid://l2uuknbm7ycv" path="res://scripts/runes.gd" id="1_1wgm5"]
+[ext_resource type="Texture2D" uid="uid://q060ku8lguli" path="res://assets/Png/Game Jam  Interactibles.png" id="2_07hfa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_irdgr"]
 radius = 5.0
 height = 22.0
 
-[node name="Runes" type="Node2D"]
+[node name="Runes" type="CharacterBody2D"]
+script = ExtResource("1_1wgm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_hgld0")
+texture = ExtResource("2_07hfa")
 hframes = 8
 vframes = 8
 frame = 2

@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="8_mfcyg"]
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="9_6x7h6"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_jyb8g"]
-[ext_resource type="PackedScene" uid="uid://b4ar651b2p446" path="res://scene/Mechanics/Vision Rune.tscn" id="10_mfcyg"]
 [ext_resource type="PackedScene" uid="uid://cgu8xkm8fl6x3" path="res://scene/Mechanics/Spike.tscn" id="11_6x7h6"]
+[ext_resource type="PackedScene" uid="uid://d3xsbs2e6hi6u" path="res://scene/Mechanics/Runes.tscn" id="12_iab5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cabnn"]
 texture = ExtResource("1_s6gvh")
@@ -350,12 +350,12 @@ color = Color(1, 1, 0.33333334, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_2g8lx")
 
-[node name="Rune" parent="." instance=ExtResource("10_mfcyg")]
-position = Vector2(906.99994, 605)
-scale = Vector2(0.31, 0.31)
-
 [node name="Spike" parent="." instance=ExtResource("11_6x7h6")]
 position = Vector2(223, 622)
+
+[node name="Runes" parent="." instance=ExtResource("12_iab5d")]
+position = Vector2(949, 202)
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]
