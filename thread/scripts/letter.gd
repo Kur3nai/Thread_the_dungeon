@@ -9,4 +9,3 @@ func _on_pressed() -> void:
 	#get_tree().paused = false
 	Global.letter_visible = false
 	self.visible = false
-

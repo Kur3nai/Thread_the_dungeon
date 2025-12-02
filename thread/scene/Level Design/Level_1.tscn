@@ -280,7 +280,6 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_cabnn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -357,15 +356,6 @@ texture = SubResource("GradientTexture2D_2g8lx")
 [node name="Spike" parent="." instance=ExtResource("11_6x7h6")]
 position = Vector2(223, 622)
 
-[node name="Rune" parent="." instance=ExtResource("11_iab5d")]
-position = Vector2(924, 544)
-
-[node name="Rune2" parent="." instance=ExtResource("12_2g8lx")]
-position = Vector2(754, 462)
-
-[node name="Rune3" parent="." instance=ExtResource("13_pq22v")]
-position = Vector2(360, 462)
-
 [node name="Lamp" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("5_a8wv2")]
 position = Vector2(345, 530)
 activated_node = NodePath("../Trapdoor Manager")
@@ -373,6 +363,15 @@ platform_holder = true
 
 [node name="Trapdoor Manager" parent="." instance=ExtResource("14_pq22v")]
 position = Vector2(161, 534)
+
+[node name="Jump_Rune" parent="." instance=ExtResource("12_2g8lx")]
+position = Vector2(745, 425)
+
+[node name="Speed_Rune" parent="." instance=ExtResource("13_pq22v")]
+position = Vector2(261, 525)
+
+[node name="Vision_Rune" parent="." instance=ExtResource("11_iab5d")]
+position = Vector2(914, 471)
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]

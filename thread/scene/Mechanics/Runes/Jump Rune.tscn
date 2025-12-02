@@ -18,6 +18,7 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="Jump_Rune" type="Node2D"]
 script = ExtResource("1_bf2fb")
+rune_type = 2
 
 [node name="Jump" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = Global.Jump_velocity #Linked to Global variable(way to use global variable = (Global name) + "." + (variable name)
+		velocity.y = Global.Jump_Velocity #Linked to Global variable(way to use global variable = (Global name) + "." + (variable name)
 
 	var direction := Input.get_axis("MoveLeft", "MoveRight")
 	
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, Global.Speed)
 
-	if Global.has_darkvision:
+	if Global.Has_Darkvision:
 		_activate_darkvision();
 	
 	if !Global.letter_visible:
@@ -65,7 +65,7 @@ func _deactivate_darkvision():
 	var tween = get_tree().create_tween()
 	tween.tween_property(light_area, "scale", Vector2(base_vision_radius, base_vision_radius), 1.0) 
 	tween.play() 
-	Global.has_darkvision = false
+	Global.Has_Darkvision = false
 
 func _darkvision_timer():
 	var timer:Timer = Timer.new();
@@ -81,5 +81,3 @@ func show_message(text):
 
 func hide_message():
 	$pick_up.hide()
-
-
