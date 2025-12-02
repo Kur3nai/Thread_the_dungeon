@@ -13,8 +13,8 @@ var vision_size:Vector2 = Vector2(vision_radius, vision_radius);
 @export var base_vision_radius:float = 2.0;
 @export var letter:Button;
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -450.0
+#const SPEED = 300.0
+#const JUMP_VELOCITY = -450.0
 
 func _ready() -> void:
 	torch.visible = false
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = Global.Jump_velocity #Linked to Global variable(way to use global variable = (Global name) + "." + (variable name)
 
 	var direction := Input.get_axis("MoveLeft", "MoveRight")
 	
@@ -44,9 +44,9 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("Jumping")
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * Global.Speed #Linked to Global variable(way to use global variable = (Global name) + "." + (variable name)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, Global.Speed)
 
 	move_and_slide()
 	if has_darkvision:
