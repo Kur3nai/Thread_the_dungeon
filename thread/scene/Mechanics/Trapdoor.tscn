@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://vh7ensn2sm1p"]
 
-[ext_resource type="Script" uid="uid://k7nkumocxy2b" path="res://trapdoor_manager.gd" id="1_is55g"]
+[ext_resource type="Script" uid="uid://k7nkumocxy2b" path="res://scripts/trapdoor_manager.gd" id="1_is55g"]
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="2_is55g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1sa"]

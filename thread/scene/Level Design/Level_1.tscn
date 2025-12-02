@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bhcfbggnsdsjb"]
+[gd_scene load_steps=25 format=4 uid="uid://bhcfbggnsdsjb"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_s6gvh"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="3_bqeqd"]
@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="9_6x7h6"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_jyb8g"]
 [ext_resource type="PackedScene" uid="uid://cgu8xkm8fl6x3" path="res://scene/Mechanics/Spike.tscn" id="11_6x7h6"]
+[ext_resource type="PackedScene" uid="uid://bjlhaowh6h5vu" path="res://scene/Mechanics/Runes/Vision Rune.tscn" id="11_iab5d"]
+[ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="12_2g8lx"]
+[ext_resource type="PackedScene" uid="uid://ykxlmh4da2h" path="res://scene/Mechanics/Runes/Speed Rune.tscn" id="13_pq22v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cabnn"]
 texture = ExtResource("1_s6gvh")
@@ -352,6 +355,15 @@ texture = SubResource("GradientTexture2D_2g8lx")
 
 [node name="Spike" parent="." instance=ExtResource("11_6x7h6")]
 position = Vector2(223, 622)
+
+[node name="Rune" parent="." instance=ExtResource("11_iab5d")]
+position = Vector2(924, 544)
+
+[node name="Rune2" parent="." instance=ExtResource("12_2g8lx")]
+position = Vector2(754, 462)
+
+[node name="Rune3" parent="." instance=ExtResource("13_pq22v")]
+position = Vector2(360, 462)
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]

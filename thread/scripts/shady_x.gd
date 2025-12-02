@@ -5,7 +5,6 @@ extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var light_area: PointLight2D = $LightArea
 @onready var torch: Node2D = $Torch
-var has_darkvision:bool = false;
 @export var vision_radius:float = 8.0;
 var vision_size:Vector2 = Vector2(vision_radius, vision_radius);
 @export var vision_cooldown:float = 2.0;
@@ -49,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, Global.Speed)
 
 	move_and_slide()
-	if has_darkvision:
+	if Global.has_darkvision:
 		_activate_darkvision();
 	
 func _activate_darkvision():
@@ -58,9 +57,9 @@ func _activate_darkvision():
 
 func _deactivate_darkvision():
 	var tween = get_tree().create_tween()
-	tween.tween_property(light_area, "scale", Vector2(base_vision_radius, base_vision_radius), 1.0) # 1 second fade-out
-	tween.play()
-	has_darkvision = false
+	tween.tween_property(light_area, "scale", Vector2(base_vision_radius, base_vision_radius), 1.0) 
+	tween.play() 
+	Global.has_darkvision = false
 
 func _darkvision_timer():
 	var timer:Timer = Timer.new();
