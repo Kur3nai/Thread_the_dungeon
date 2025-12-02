@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("Interact"):
 		var letter = get_tree().current_scene.get_node("Letter")
 		letter.visible = true
+		get_tree().paused = true
 
 
 func _on_body_entered(body: Node2D) -> void:

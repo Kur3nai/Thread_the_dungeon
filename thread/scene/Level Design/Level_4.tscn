@@ -560,6 +560,7 @@ position = Vector2(70, 584)
 letter = NodePath("../Letter")
 
 [node name="Letter" type="Button" parent="."]
+process_mode = 3
 visible = false
 offset_left = 168.0
 offset_top = 166.99997
