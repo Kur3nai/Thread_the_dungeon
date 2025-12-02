@@ -479,6 +479,7 @@ texture = SubResource("GradientTexture2D_p5ki8")
 
 [node name="Runes" parent="." instance=ExtResource("10_88q81")]
 position = Vector2(376, 266)
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]

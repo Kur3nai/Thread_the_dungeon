@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var player_in_area = false
+var player:Node = null
 var screen_size: Vector2
 const INITIAL_SPEED: int = 50
 var speed: int = INITIAL_SPEED

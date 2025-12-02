@@ -8,6 +8,7 @@ radius = 5.0
 height = 22.0
 
 [node name="Runes" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_1wgm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
