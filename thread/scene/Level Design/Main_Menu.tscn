@@ -200,6 +200,16 @@ min_value = -80.0
 max_value = 0.0
 script = ExtResource("6_vqdcv")
 
+[node name="Fulscreen_Label" type="Label" parent="Options_Panel"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 224.0
+offset_right = 235.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 24
+text = "Fullscreen"
+horizontal_alignment = 2
+
 [node name="Fullscreen_Options" type="OptionButton" parent="Options_Panel"]
 layout_mode = 0
 offset_left = 287.0
@@ -217,16 +227,6 @@ popup/item_3/text = "Minimized"
 popup/item_3/id = 3
 popup/item_4/text = "Windowed"
 popup/item_4/id = 4
-
-[node name="Fulscreen_Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 355.0
-offset_top = 430.0
-offset_right = 527.0
-offset_bottom = 464.0
-theme_override_font_sizes/font_size = 24
-text = "Fullscreen"
-horizontal_alignment = 2
 
 [connection signal="pressed" from="Button_Container/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Button_Container/Options" to="." method="_on_options_pressed"]
