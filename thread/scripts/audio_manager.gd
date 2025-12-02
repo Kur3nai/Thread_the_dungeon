@@ -28,7 +28,7 @@ func _on_scene_changed(new_scene):
 	if scene_map.has(scene_name):
 		var next_stream = load(scene_map[scene_name])
 		if stream != next_stream:
-			fade_to(next_stream, 1.5)  # 1.5 seconds fade	var target_music:String = scene_map[scene_name]
+			fade_to(next_stream, 0.5)  #0.5 seconds fade	var target_music:String = scene_map[scene_name]
 
 func fade_to(new_stream: AudioStream, duration: float = 1.0) -> void:
 	var start_vol_db = music_player.volume_db

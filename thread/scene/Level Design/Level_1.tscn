@@ -279,7 +279,6 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_cabnn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -293,10 +292,9 @@ position = Vector2(1027, 587)
 [node name="Text_interacter" parent="." instance=ExtResource("5_jyb8g")]
 position = Vector2(483, 436)
 
-[node name="ShadyX" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("5_x4vcx")]
+[node name="ShadyX" parent="." instance=ExtResource("5_x4vcx")]
 position = Vector2(83, 585)
 vision_reduction_speed = 0.1
-letter = NodePath("../Letter")
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_jyb8g")]
 position = Vector2(557, 321)
@@ -305,6 +303,7 @@ letter = NodePath("../Letter")
 [node name="Letter" type="Button" parent="."]
 process_mode = 3
 visible = false
+z_index = 5
 offset_left = 168.0
 offset_top = 166.99997
 offset_right = 546.0

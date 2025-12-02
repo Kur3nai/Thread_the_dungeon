@@ -34,6 +34,11 @@ func _process(delta: float) -> void:
 		else:
 			player.show_message("You need a torch")
 
+	if Global.letter_visible:
+		light_area.visible = false;
+	else:
+		light_area.visible = true;
+
 func _manipulate_platform() -> void: 
 	activated_node.is_activated = !activated_node.is_activated;
 
