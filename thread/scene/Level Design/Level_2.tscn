@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://5hgo02n1gd6j"]
+[gd_scene load_steps=21 format=4 uid="uid://5hgo02n1gd6j"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_kemnw"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_fsml6"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="5_rymmj"]
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="6_4kr5r"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_p5ki8"]
-[ext_resource type="PackedScene" uid="uid://d3xsbs2e6hi6u" path="res://scene/Mechanics/runes.tscn" id="10_88q81"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="10_6714m"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="12_6714m"]
 
@@ -477,10 +476,6 @@ scale = Vector2(5.8174505, 2.297891)
 color = Color(1, 1, 0.33333334, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_p5ki8")
-
-[node name="Runes" parent="." instance=ExtResource("10_88q81")]
-position = Vector2(376, 266)
-scale = Vector2(2, 2)
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]
