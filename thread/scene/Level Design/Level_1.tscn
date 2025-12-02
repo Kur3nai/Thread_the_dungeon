@@ -280,6 +280,7 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_cabnn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -358,7 +359,6 @@ position = Vector2(223, 622)
 
 [node name="Rune" parent="." instance=ExtResource("11_iab5d")]
 position = Vector2(924, 544)
-rune_type = "has_darkvision"
 
 [node name="Rune2" parent="." instance=ExtResource("12_2g8lx")]
 position = Vector2(754, 462)

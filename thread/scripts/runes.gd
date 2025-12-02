@@ -1,18 +1,19 @@
 extends Node2D
 
-@export var rune_type: String = "has_darkvision" 
+enum RuneType {HAS_DARKVISION, INCREASE_SPEED, INCREASE_JUMP, INCREASE_VISION_RADIUS}
+@export var rune_type: RuneType = RuneType.HAS_DARKVISION
 
-func _on_pickup_range_entered(body: Node2D):
+func _on_rune_model_body_entered(body: Node2D):
 	if(body.is_in_group("ShadyX")):
 		match rune_type: 
-			"has_darkvision":
+			RuneType.HAS_DARKVISION:
 				Global.has_darkvision = true
-			"increase_speed":
+			RuneType.INCREASE_SPEED:
 				Global.speed += 50
-			"increase_jump":
+			RuneType.INCREASE_JUMP:
 				Global.Jump_velocity -= 100
-			"increase_vision_radius":
+			RuneType.INCREASE_VISION_RADIUS:
 				body.vision_radius += 5
-				if body.has_darkvision:
+				if Global.has_darkvision: 
 					body.vision_size = Vector2(body.vision_radius, body.vision_radius)
 		queue_free()
