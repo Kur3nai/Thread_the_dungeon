@@ -527,8 +527,28 @@ tile_set = SubResource("TileSet_jj7ni")
 tile_map_data = PackedByteArray("AAAPAA4AAAADAAEAAAA=")
 tile_set = SubResource("TileSet_poxxc")
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+energy = 0.9
+blend_mode = 1
+
+[node name="Door" parent="." instance=ExtResource("12_rqfpl")]
+position = Vector2(1127, 63)
+scale = Vector2(2, 2)
+
+[node name="Door_linked_lamp" parent="." instance=ExtResource("11_c8pm5")]
+position = Vector2(513, 467)
+
 [node name="Text_interacter" parent="." instance=ExtResource("6_frkvs")]
 position = Vector2(1107, 272)
+
+[node name="ShadyX" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("10_p4ns1")]
+position = Vector2(99, 589)
+letter = NodePath("../Letter")
+
+[node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_au00d")]
+position = Vector2(1103, 592)
+letter = NodePath("../Letter")
 
 [node name="Letter" type="Button" parent="."]
 visible = false
@@ -574,24 +594,6 @@ offset_right = 238.32849
 offset_bottom = 140.17633
 theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
 text = "Click to close"
-
-[node name="Light" parent="." instance=ExtResource("9_au00d")]
-position = Vector2(1103, 592)
-
-[node name="ShadyX" parent="." instance=ExtResource("10_p4ns1")]
-position = Vector2(99, 589)
-
-[node name="Door_linked_lamp" parent="." instance=ExtResource("11_c8pm5")]
-position = Vector2(513, 467)
-
-[node name="Door" parent="." instance=ExtResource("12_rqfpl")]
-position = Vector2(1127, 63)
-scale = Vector2(2, 2)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
-energy = 0.9
-blend_mode = 1
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]

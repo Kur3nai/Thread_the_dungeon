@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://6um8c578hlxn"]
+[gd_scene load_steps=31 format=4 uid="uid://6um8c578hlxn"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_2ovjv"]
 [ext_resource type="Texture2D" uid="uid://diqgm1wlmeopo" path="res://assets/Png/Light.png" id="2_3f8jb"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="10_um0gf"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="11_ln217"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="12_ln217"]
+[ext_resource type="PackedScene" uid="uid://djnbn776hdrg7" path="res://scene/Mechanics/VerticalMovingPlatform.tscn" id="13_nre3f"]
+[ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/HorizontalMovingPlatform.tscn" id="14_1l6e1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xhbd"]
 texture_region_size = Vector2i(32, 16)
@@ -536,8 +538,28 @@ tile_set = SubResource("TileSet_xjatp")
 tile_map_data = PackedByteArray("AAAbABIAAAADAAEAAAAaAAcAAAADAAEAAAAMAAEAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_iiid7")
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+energy = 0.9
+blend_mode = 1
+
 [node name="Text_interacter" parent="." instance=ExtResource("6_p01ry")]
 position = Vector2(1107, 319)
+
+[node name="Door_linked_lamp" parent="." instance=ExtResource("11_ln217")]
+position = Vector2(850, 243)
+
+[node name="Door" parent="." instance=ExtResource("9_it3mi")]
+position = Vector2(1127, 61)
+scale = Vector2(2, 2)
+
+[node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("10_um0gf")]
+position = Vector2(114, 272)
+letter = NodePath("../Letter")
+
+[node name="ShadyX" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("12_ln217")]
+position = Vector2(70, 584)
+letter = NodePath("../Letter")
 
 [node name="Letter" type="Button" parent="."]
 visible = false
@@ -579,25 +601,17 @@ offset_bottom = 140.17633
 theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
 text = "Click to close"
 
-[node name="Door" parent="." instance=ExtResource("9_it3mi")]
-position = Vector2(1127, 61)
-scale = Vector2(2, 2)
+[node name="Moving Platform" parent="." instance=ExtResource("13_nre3f")]
+position = Vector2(667, 335)
+script = null
 
-[node name="Light" parent="." instance=ExtResource("10_um0gf")]
-position = Vector2(114, 272)
+[node name="Moving Platform3" parent="." instance=ExtResource("14_1l6e1")]
+position = Vector2(715, 113)
+script = null
 
-[node name="Lamp" parent="." instance=ExtResource("11_ln217")]
-position = Vector2(881, 593)
-
-[node name="Door_linked_lamp" parent="." instance=ExtResource("11_ln217")]
-position = Vector2(850, 243)
-
-[node name="ShadyX" parent="." instance=ExtResource("12_ln217")]
-position = Vector2(70, 584)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.9
-blend_mode = 1
+[node name="Moving Platform2" parent="." instance=ExtResource("14_1l6e1")]
+position = Vector2(638, 199)
+script = null
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="Light" method="_on_letter_visibility_changed"]
