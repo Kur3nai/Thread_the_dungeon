@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b3qyh727u1wl1"]
+[gd_scene load_steps=30 format=4 uid="uid://b3qyh727u1wl1"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_40f36"]
 [ext_resource type="Texture2D" uid="uid://diqgm1wlmeopo" path="res://assets/Png/Light.png" id="2_bwpkl"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="10_p4ns1"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="11_c8pm5"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="12_rqfpl"]
+[ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/HorizontalMovingPlatform.tscn" id="13_p4ns1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grbyn"]
 texture_region_size = Vector2i(32, 16)
@@ -541,9 +542,8 @@ position = Vector2(513, 467)
 [node name="Text_interacter" parent="." instance=ExtResource("6_frkvs")]
 position = Vector2(1107, 272)
 
-[node name="ShadyX" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("10_p4ns1")]
-position = Vector2(99, 589)
-letter = NodePath("../Letter")
+[node name="ShadyX" parent="." instance=ExtResource("10_p4ns1")]
+position = Vector2(86, 131)
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_au00d")]
 position = Vector2(1103, 592)
@@ -594,6 +594,10 @@ offset_right = 238.32849
 offset_bottom = 140.17633
 theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
 text = "Click to close"
+
+[node name="Moving Platform" parent="." instance=ExtResource("13_p4ns1")]
+position = Vector2(533, 222)
+move_width = 300.0
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]

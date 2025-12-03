@@ -423,7 +423,7 @@ position = Vector2(449, 440)
 position = Vector2(39, 211)
 
 [node name="ShadyX" parent="." instance=ExtResource("12_6714m")]
-position = Vector2(267, 530)
+position = Vector2(831, 115)
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_p5ki8")]
 position = Vector2(1103, 589)
