@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv0jffxxpf55" path="res://scripts/level_select.gd" id="1_0q1py"]
 
-[node name="Level_Select" type="Control"]
+[node name="Level_Select" type="Control" node_paths=PackedStringArray("lv1", "lv2", "lv3", "lv4", "lv5", "lv6", "lv7")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +10,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0q1py")
+lv1 = NodePath("Level_Container1/Level_1_Button")
+lv2 = NodePath("Level_Container1/Level_2_Button")
+lv3 = NodePath("Level_Container1/Level_3_Button")
+lv4 = NodePath("Level_Container1/Level_4_Button")
+lv5 = NodePath("Level_Container2/Level_5_Button")
+lv6 = NodePath("Level_Container2/Level_6_Button")
+lv7 = NodePath("Level_Container2/Level_7_Button")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
