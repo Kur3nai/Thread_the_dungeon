@@ -361,9 +361,9 @@ duration = 1.5
 [node name="Jump_Rune" parent="." instance=ExtResource("8_v0xfu")]
 position = Vector2(1039, 347)
 jump_increase = 400
+duration = 2.5
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.9
 blend_mode = 1
 
