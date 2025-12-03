@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://5hgo02n1gd6j"]
+[gd_scene load_steps=23 format=4 uid="uid://5hgo02n1gd6j"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_kemnw"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_fsml6"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="6_4kr5r"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_p5ki8"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="10_6714m"]
+[ext_resource type="PackedScene" uid="uid://djnbn776hdrg7" path="res://scene/Mechanics/VerticalMovingPlatform.tscn" id="10_p5ki8"]
+[ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/HorizontalMovingPlatform.tscn" id="11_6714m"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="12_6714m"]
 
 [sub_resource type="TileSet" id="TileSet_dktqr"]
@@ -420,9 +422,8 @@ position = Vector2(449, 440)
 [node name="Text_interacter" parent="." instance=ExtResource("5_4kr5r")]
 position = Vector2(39, 211)
 
-[node name="ShadyX" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("12_6714m")]
+[node name="ShadyX" parent="." instance=ExtResource("12_6714m")]
 position = Vector2(267, 530)
-letter = NodePath("../Letter")
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_p5ki8")]
 position = Vector2(1103, 589)
@@ -476,6 +477,14 @@ scale = Vector2(5.8174505, 2.297891)
 color = Color(1, 1, 0.33333334, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_p5ki8")
+
+[node name="Moving Platform" parent="." instance=ExtResource("10_p5ki8")]
+position = Vector2(843, 269)
+move_height = 150.0
+
+[node name="Moving Platform2" parent="." instance=ExtResource("11_6714m")]
+position = Vector2(464, 118)
+move_width = 200.0
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]
