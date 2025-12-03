@@ -295,8 +295,10 @@ position = Vector2(1027, 587)
 [node name="Text_interacter" parent="." instance=ExtResource("5_jyb8g")]
 position = Vector2(483, 436)
 
-[node name="ShadyX" parent="." instance=ExtResource("5_x4vcx")]
+[node name="ShadyX" parent="." node_paths=PackedStringArray("death_screen", "directional_light") instance=ExtResource("5_x4vcx")]
 position = Vector2(37, 600)
+death_screen = NodePath("../DeathScreen")
+directional_light = NodePath("../DirectionalLight2D")
 vision_reduction_speed = 0.1
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_jyb8g")]

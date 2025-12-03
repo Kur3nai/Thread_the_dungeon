@@ -25,18 +25,21 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
 		var current_scene:String = get_tree().current_scene.name
 		if current_scene == "Level_1":
-			print("ShadyX enter")
 			get_tree().change_scene_to_file("res://scene/Level Design/Level_2.tscn")
 		elif current_scene == "Level_2":
-			AudioManager._on_scene_changed("2")
 			get_tree().change_scene_to_file("res://scene/Level Design/Level_3.tscn")
 		elif current_scene == "Level_3": 
-			AudioManager._on_scene_changed("3")
 			get_tree().change_scene_to_file("res://scene/Level Design/Level_4.tscn")
 		elif current_scene == "Level_4":
-			AudioManager._on_scene_changed("M")
-			get_tree().change_scene_to_file("res://scene/Level Design/Main_Menu.tscn")
-
+			AudioManager._on_scene_changed("2")
+			get_tree().change_scene_to_file("res://scene/Level Design/Level_5.tscn")
+		elif current_scene == "Level_5":
+			get_tree().change_scene_to_file("res://scene/Level Design/Level_6.tscn")
+		elif current_scene == "Level_6":
+			AudioManager._on_scene_changed("3")
+			get_tree().change_scene_to_file("res://scene/Level Design/Level_7.tscn")
+		elif current_scene == "Level_7":
+			get_tree().change_scene_to_file("res://scene/Level Design/Main_Menu.tscn");
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Door_Open":

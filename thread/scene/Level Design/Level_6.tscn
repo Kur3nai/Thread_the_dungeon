@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://ddl44x2g4766p"]
+[gd_scene load_steps=16 format=4 uid="uid://ddl44x2g4766p"]
 
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_xj12b"]
 [ext_resource type="PackedScene" uid="uid://djnbn776hdrg7" path="res://scene/Mechanics/VerticalMovingPlatform.tscn" id="2_024u8"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cgu8xkm8fl6x3" path="res://scene/Mechanics/Spike.tscn" id="8_8pcke"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="9_h3257"]
 [ext_resource type="PackedScene" uid="uid://bjlhaowh6h5vu" path="res://scene/Mechanics/Runes/Vision Rune.tscn" id="10_ayf08"]
+[ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="11_ayf08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04bty"]
 texture = ExtResource("1_xj12b")
@@ -233,22 +234,25 @@ position = Vector2(682, 343)
 move_height = 200.0
 is_activated = false
 
-[node name="ShadyX" parent="." instance=ExtResource("3_024u8")]
-position = Vector2(421, 82)
+[node name="ShadyX" parent="." node_paths=PackedStringArray("death_screen", "directional_light") instance=ExtResource("3_024u8")]
+position = Vector2(42, 584)
+death_screen = NodePath("../Death")
+directional_light = NodePath("../DirectionalLight2D")
 
 [node name="Lamp" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("4_cfhky")]
 position = Vector2(487, 408)
 activated_node = NodePath("../Moving Platform")
 platform_holder = true
+light_size = 10.0
 
 [node name="Lamp2" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("4_cfhky")]
 position = Vector2(866, 255)
 activated_node = NodePath("../Moving Platform")
 platform_holder = true
+light_size = 10.0
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("4_cfhky")]
 position = Vector2(959, 64)
-light_size = 10.0
 
 [node name="Light" parent="." instance=ExtResource("5_ore10")]
 position = Vector2(259, 405)
@@ -351,7 +355,12 @@ scale = Vector2(2, 2)
 
 [node name="Vision_Rune" parent="." instance=ExtResource("10_ayf08")]
 position = Vector2(193, 478)
+vision_increase = 300.0
+duration = 2.0
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.9
 blend_mode = 1
+
+[node name="Death" parent="." instance=ExtResource("11_ayf08")]
+visible = false

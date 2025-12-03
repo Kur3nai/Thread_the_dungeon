@@ -329,7 +329,7 @@ position = Vector2(1126, 346)
 
 [node name="Speed_Rune" parent="." instance=ExtResource("7_jtviw")]
 position = Vector2(326, 481)
-speed_increase = 10000
+speed_increase = 100
 duration = 1.0
 
 [node name="Jump_Rune" parent="." instance=ExtResource("8_v0xfu")]

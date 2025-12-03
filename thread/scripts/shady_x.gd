@@ -21,6 +21,7 @@ func _ready() -> void:
 	torch.visible = false
 	pick_up.visible = false
 	light_area.scale = Vector2(base_vision_radius, base_vision_radius);
+	death_screen.visible = false
 
 func _physics_process(delta: float) -> void:
 	if is_dead: 
