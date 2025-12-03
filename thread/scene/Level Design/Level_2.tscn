@@ -420,6 +420,7 @@ scale = Vector2(2, 2)
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("10_6714m")]
 position = Vector2(456, 459)
+light_size = 10.0
 
 [node name="Text_interacter" parent="." instance=ExtResource("5_4kr5r")]
 position = Vector2(39, 211)
