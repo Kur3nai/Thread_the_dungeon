@@ -384,7 +384,6 @@ vision_increase = 300.0
 duration = 2.0
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.9
 blend_mode = 1
 
