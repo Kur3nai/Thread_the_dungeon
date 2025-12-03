@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bbtucc15t6gsa"]
+[gd_scene load_steps=16 format=4 uid="uid://bbtucc15t6gsa"]
 
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_iv01k"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="2_8ie5m"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="7_wcs7s"]
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="8_k4tyh"]
 [ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="9_8ie5m"]
+[ext_resource type="Script" uid="uid://duxyrrbjhhas4" path="res://scene/Level Design/panel.gd" id="10_gnwb8"]
+[ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="10_uydob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_axqpy"]
 texture = ExtResource("1_iv01k")
@@ -351,6 +353,22 @@ energy = 0.9
 blend_mode = 1
 
 [node name="Death" parent="." instance=ExtResource("8_k4tyh")]
+visible = false
 
 [node name="Text_interacter" parent="." instance=ExtResource("9_8ie5m")]
 position = Vector2(22, 70)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_gnwb8")
+
+[node name="Pause_Menu" parent="Panel" instance=ExtResource("10_uydob")]
+layout_mode = 1
+offset_left = 564.0
+offset_top = 294.0
+offset_right = 564.0
+offset_bottom = 294.0

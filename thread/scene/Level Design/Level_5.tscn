@@ -223,6 +223,7 @@ sources/0 = SubResource("TileSetAtlasSource_mh2co")
 [node name="Level_5" type="Node2D"]
 
 [node name="DeathScreen" parent="." instance=ExtResource("1_j2cbe")]
+visible = false
 z_index = 6
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
