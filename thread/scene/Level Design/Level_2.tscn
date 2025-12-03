@@ -411,7 +411,6 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_h5cor")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -420,22 +419,18 @@ position = Vector2(27, 64)
 scale = Vector2(2, 2)
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("10_6714m")]
-visible = false
 position = Vector2(456, 459)
 light_size = 10.0
 
 [node name="Text_interacter" parent="." instance=ExtResource("5_4kr5r")]
-visible = false
 position = Vector2(39, 211)
 
 [node name="ShadyX" parent="." node_paths=PackedStringArray("death_screen", "directional_light") instance=ExtResource("12_6714m")]
-visible = false
 position = Vector2(61, 576)
 death_screen = NodePath("../Death")
 directional_light = NodePath("../DirectionalLight2D")
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_p5ki8")]
-visible = false
 position = Vector2(1103, 589)
 letter = NodePath("../Letter")
 
