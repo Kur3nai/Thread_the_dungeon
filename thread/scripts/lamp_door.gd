@@ -50,7 +50,7 @@ func _on_body_entered(body: Node2D) -> void:
 			player_in_area = true
 		else:  
 			player = body
-			body.show_message("Press E to insert the torch")
+			body.show_message("Press E to insert thetorch")
 			player_in_area = true
 
 
