@@ -448,6 +448,7 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_ecifp")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -463,7 +464,7 @@ position = Vector2(1107, 272)
 
 [node name="ShadyX" parent="." instance=ExtResource("10_p4ns1")]
 z_index = 5
-position = Vector2(1022, 217)
+position = Vector2(85, 547)
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_au00d")]
 position = Vector2(1103, 592)
