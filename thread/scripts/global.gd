@@ -9,6 +9,7 @@ static var Has_Darkvision: bool = false
 var Vision_Radius: float = 0.0 
 var ActiveRunes: Dictionary = {}  # key: rune_type, value: {value, duration, timer}
 static var letter_visible: bool = false
+static var max_level: int = 1;
 
 func _ready() -> void:
 	pass # Replace with function body.
