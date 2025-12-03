@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bbtucc15t6gsa"]
+[gd_scene load_steps=23 format=4 uid="uid://bbtucc15t6gsa"]
 
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_iv01k"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="2_8ie5m"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="7_wcs7s"]
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="8_k4tyh"]
 [ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="9_8ie5m"]
-[ext_resource type="Script" uid="uid://duxyrrbjhhas4" path="res://scripts/Setting/panel.gd" id="10_gnwb8"]
 [ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="10_uydob"]
 [ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="12_4llyt"]
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="13_wcs7s"]
@@ -379,17 +378,7 @@ visible = false
 [node name="Text_interacter" parent="." instance=ExtResource("9_8ie5m")]
 position = Vector2(22, 70)
 
-[node name="PauseMenu" type="Panel" parent="."]
-process_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_gnwb8")
-
-[node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("10_uydob")]
-layout_mode = 1
+[node name="Pause_Menu" parent="." instance=ExtResource("10_uydob")]
 offset_left = 564.0
 offset_top = 294.0
 offset_right = 564.0
@@ -420,13 +409,12 @@ offset_bottom = 294.33545
 scale = Vector2(0.46989048, 0.55206156)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Dear Madoc,
+text = "To: Thrain,
 
-Evacuations have begun and the monsters are coming. 
-Remind the people that Luminus will lead the way forth. 
+The war wasn't your fault. We know the swords weren't made by you. 
+Stop blaming yourself for their deaths. We'll always be here for you, no matter how long it takes.
 
-Paos
-"
+From: Paos"
 
 [node name="Label" type="Label" parent="Letter"]
 modulate = Color(0.11091188, 0.098552816, 0.13990334, 1)

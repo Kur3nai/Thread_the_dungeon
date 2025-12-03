@@ -400,13 +400,12 @@ offset_bottom = 294.33545
 scale = Vector2(0.46989048, 0.55206156)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Dear Madoc,
+text = "Whoever may yet be alive
 
-Evacuations have begun and the monsters are coming. 
-Remind the people that Luminus will lead the way forth. 
-
-Paos
-"
+I hope you may face a better fate than us. 
+Beyond this door is a tunnel system used by rogues of the
+Red Moon Cartel. Beware of its traps and what may lie at 
+the end of the tunnel."
 
 [node name="Label" type="Label" parent="Letter"]
 modulate = Color(0.11091188, 0.098552816, 0.13990334, 1)
