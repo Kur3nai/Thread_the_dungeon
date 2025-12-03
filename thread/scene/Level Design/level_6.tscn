@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ddl44x2g4766p"]
+[gd_scene load_steps=15 format=4 uid="uid://ddl44x2g4766p"]
 
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_xj12b"]
 [ext_resource type="PackedScene" uid="uid://djnbn776hdrg7" path="res://scene/Mechanics/VerticalMovingPlatform.tscn" id="2_024u8"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="5_ore10"]
 [ext_resource type="PackedScene" uid="uid://d08gisouecqre" path="res://scene/Mechanics/lever.tscn" id="6_64yot"]
 [ext_resource type="PackedScene" uid="uid://vh7ensn2sm1p" path="res://scene/Mechanics/Trapdoor.tscn" id="7_8pcke"]
+[ext_resource type="PackedScene" uid="uid://cgu8xkm8fl6x3" path="res://scene/Mechanics/Spike.tscn" id="8_8pcke"]
+[ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="9_h3257"]
+[ext_resource type="PackedScene" uid="uid://bjlhaowh6h5vu" path="res://scene/Mechanics/Runes/Vision Rune.tscn" id="10_ayf08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04bty"]
 texture = ExtResource("1_xj12b")
@@ -258,3 +261,93 @@ trapdoor_holder = NodePath("../Trapdoor")
 position = Vector2(909.00006, 48.000004)
 rotation = -1.5707964
 scale = Vector2(-3, 3)
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spike" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(305, 622)
+
+[node name="Spike2" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(337, 622)
+
+[node name="Spike3" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(369, 622)
+
+[node name="Spike4" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(401, 622)
+
+[node name="Spike5" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(433, 622)
+
+[node name="Spike6" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(465, 622)
+
+[node name="Spike7" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(497, 622)
+
+[node name="Spike8" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(529, 622)
+
+[node name="Spike9" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(561, 622)
+
+[node name="Spike10" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(593, 622)
+
+[node name="Spike11" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(625, 622)
+
+[node name="Spike12" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(657, 622)
+
+[node name="Spike13" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(689, 622)
+
+[node name="Spike14" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(721, 622)
+
+[node name="Spike15" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(753, 622)
+
+[node name="Spike16" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(785, 622)
+
+[node name="Spike17" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(817, 622)
+
+[node name="Spike18" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(849, 622)
+
+[node name="Spike19" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(881, 622)
+
+[node name="Spike20" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(913, 622)
+
+[node name="Spike21" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(945, 622)
+
+[node name="Spike22" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(977, 622)
+
+[node name="Spike23" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(1009, 622)
+
+[node name="Spike24" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(1041, 622)
+
+[node name="Spike25" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(1073, 622)
+
+[node name="Spike26" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(1105, 622)
+
+[node name="Spike27" parent="Spikes" instance=ExtResource("8_8pcke")]
+position = Vector2(1137, 622)
+
+[node name="Door" parent="." instance=ExtResource("9_h3257")]
+position = Vector2(27, 64)
+scale = Vector2(2, 2)
+
+[node name="Vision_Rune" parent="." instance=ExtResource("10_ayf08")]
+position = Vector2(193, 478)

@@ -44,4 +44,3 @@ func _toggle_lever():
 		if count < 1:
 			trapdoor_holder.animation_played = false;
 			count += 1;
-
