@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bhcfbggnsdsjb"]
+[gd_scene load_steps=24 format=4 uid="uid://bhcfbggnsdsjb"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_s6gvh"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="3_bqeqd"]
@@ -9,13 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="8_mfcyg"]
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="9_6x7h6"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="9_jyb8g"]
-[ext_resource type="PackedScene" uid="uid://cgu8xkm8fl6x3" path="res://scene/Mechanics/Spike.tscn" id="11_6x7h6"]
-[ext_resource type="PackedScene" uid="uid://bjlhaowh6h5vu" path="res://scene/Mechanics/Runes/Vision Rune.tscn" id="11_iab5d"]
-[ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="12_2g8lx"]
-[ext_resource type="PackedScene" uid="uid://ykxlmh4da2h" path="res://scene/Mechanics/Runes/Speed Rune.tscn" id="13_pq22v"]
-[ext_resource type="PackedScene" uid="uid://d08gisouecqre" path="res://scene/Mechanics/lever.tscn" id="15_5wq3n"]
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="15_dsoow"]
-[ext_resource type="PackedScene" uid="uid://vh7ensn2sm1p" path="res://scene/Mechanics/Trapdoor.tscn" id="16_db8oh"]
 [ext_resource type="Script" uid="uid://duxyrrbjhhas4" path="res://scripts/Setting/panel.gd" id="17_o2n4p"]
 [ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="18_lxko3"]
 
@@ -359,32 +353,7 @@ color = Color(1, 1, 0.33333334, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_2g8lx")
 
-[node name="Spike" parent="." instance=ExtResource("11_6x7h6")]
-position = Vector2(223, 622)
-
-[node name="Lamp" parent="." instance=ExtResource("5_a8wv2")]
-position = Vector2(448, 334)
-
-[node name="Jump_Rune" parent="." instance=ExtResource("12_2g8lx")]
-position = Vector2(33, 526)
-duration = 5.0
-
-[node name="Speed_Rune" parent="." instance=ExtResource("13_pq22v")]
-position = Vector2(291, 525)
-
-[node name="Vision_Rune" parent="." instance=ExtResource("11_iab5d")]
-position = Vector2(914, 471)
-rune_type = 3
-vision_increase = 2000.0
-
 [node name="DeathScreen" parent="." instance=ExtResource("15_dsoow")]
-
-[node name="Lever" parent="." node_paths=PackedStringArray("trapdoor_holder") instance=ExtResource("15_5wq3n")]
-position = Vector2(158, 585)
-trapdoor_holder = NodePath("../Trapdoor")
-
-[node name="Trapdoor" parent="." instance=ExtResource("16_db8oh")]
-position = Vector2(100, 609)
 
 [node name="PauseMenu" type="Panel" parent="."]
 process_mode = 3
