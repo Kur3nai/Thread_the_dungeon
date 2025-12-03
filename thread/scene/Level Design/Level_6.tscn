@@ -392,6 +392,7 @@ blend_mode = 1
 position = Vector2(1130, 88)
 
 [node name="Pause_Menu" parent="." instance=ExtResource("14_ghraq")]
+z_index = 20
 offset_left = 564.0
 offset_top = 294.0
 offset_right = 564.0

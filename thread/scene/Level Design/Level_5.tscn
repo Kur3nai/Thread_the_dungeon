@@ -246,7 +246,6 @@ use_hdr = true
 [node name="Level_5" type="Node2D"]
 
 [node name="DeathScreen" parent="." instance=ExtResource("1_j2cbe")]
-visible = false
 z_index = 6
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -346,7 +345,6 @@ position = Vector2(27, 49)
 scale = Vector2(2, 2)
 
 [node name="Door_linked_lamp" parent="." instance=ExtResource("5_j2cbe")]
-visible = false
 position = Vector2(64, 219)
 
 [node name="Light" parent="." instance=ExtResource("6_u45o2")]
@@ -359,8 +357,8 @@ duration = 1.5
 
 [node name="Jump_Rune" parent="." instance=ExtResource("8_v0xfu")]
 position = Vector2(1039, 347)
-jump_increase = 400
-duration = 2.5
+jump_increase = 200
+duration = 5.0
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.9
@@ -370,6 +368,7 @@ blend_mode = 1
 position = Vector2(1126, 118)
 
 [node name="Pause_Menu" parent="." instance=ExtResource("12_f0ofa")]
+z_index = 20
 offset_left = 564.0
 offset_top = 294.0
 offset_right = 564.0

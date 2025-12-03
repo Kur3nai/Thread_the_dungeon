@@ -537,6 +537,11 @@ move_width = 200.0
 [node name="Death" parent="." instance=ExtResource("11_nxjxt")]
 
 [node name="Pause_Menu" parent="." instance=ExtResource("13_c8pm5")]
+z_index = 20
+offset_left = 564.0
+offset_top = 294.0
+offset_right = 564.0
+offset_bottom = 294.0
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]
