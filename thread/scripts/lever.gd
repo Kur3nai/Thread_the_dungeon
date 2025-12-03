@@ -10,36 +10,38 @@ var lever_active: bool = false
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("Interact"):
 		_toggle_lever()
+		if player:
+			if lever_active:
+				player.show_message("Lever activated")
+			else:
+				player.show_message("Lever deactivated")
+	if player_in_area:
+		player.show_message("Press E to use the lever")
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_lever_area_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
 		player_in_area = true
 		player = body
-		player.show_message("Press E to use the lever")
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_lever_area_exited(body: Node2D) -> void:
 	if body == player:
 		player_in_area = false
 		player = null
+	body.hide_message()
 
 func _toggle_lever():
-	lever_active = not lever_active
-	if trapdoor_holder:
-		trapdoor_holder.activate(lever_active)
+	
+	trapdoor_holder.is_activated = !trapdoor_holder.is_activated;
+	lever_active = !lever_active
 
-	# Animate the lever
-	if lever:
-		if lever_active:
-			lever.play("Activate")        
-		else:
-			lever.play("Deactivate")  
+	var count: int = 0;
 
-	# Trigger the trapdoor
-	if trapdoor_holder:
-		trapdoor_holder.activate(lever_active) 
+	if trapdoor_holder.is_activated:
+		if count < 1:
+			trapdoor_holder.animation_played = false;
+			count += 1
+	else:
+		if count < 1:
+			trapdoor_holder.animation_played = false;
+			count += 1;
 
-	if player:
-		if lever_active:
-			player.show_message("Lever activated")
-		else:
-			player.show_message("Lever deactivated")

@@ -1,18 +1,18 @@
 extends Node2D
 
 @onready var trapdoor: AnimatedSprite2D = $Trapdoor
-@onready var collision_shape_2d: CollisionShape2D = $StaticBody2D/CollisionShape2D
+@onready var collision_shape_2d: CollisionShape2D = $Trapdoor/StaticBody2D/CollisionShape2D
+@export var is_activated:bool = false
+var animation_played:bool = false;
 
-func activate(active: bool):
-	if not trapdoor:
-		return
-	
-	trapdoor.visible = true  
-	
-	if active:
-		trapdoor.play("Activated")
-		collision_shape_2d.set_deferred("disabled",true)
+func _process(delta:float) -> void:
+	if self.is_activated:
+		collision_shape_2d.disabled = true;
+		if !animation_played:
+			trapdoor.play("Activated")
+			animation_played = true;
 	else:
-		trapdoor.play_backwards("Activated")
-		await get_tree().create_timer(1.0).timeout
-		collision_shape_2d.set_deferred("disabled",false)
+		collision_shape_2d.disabled = false;
+		if !animation_played:
+			trapdoor.play_backwards("Activated");
+			animation_played = true;

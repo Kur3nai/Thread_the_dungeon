@@ -234,7 +234,7 @@ is_activated = false
 position = Vector2(421, 82)
 
 [node name="Lamp" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("4_cfhky")]
-position = Vector2(840, -74)
+position = Vector2(487, 408)
 activated_node = NodePath("../Moving Platform")
 platform_holder = true
 
@@ -255,6 +255,6 @@ position = Vector2(483, 97)
 trapdoor_holder = NodePath("../Trapdoor")
 
 [node name="Trapdoor" parent="." instance=ExtResource("7_8pcke")]
-position = Vector2(913.00006, 39.000004)
+position = Vector2(909.00006, 48.000004)
 rotation = -1.5707964
 scale = Vector2(-3, 3)

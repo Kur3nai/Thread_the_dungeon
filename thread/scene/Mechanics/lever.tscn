@@ -82,9 +82,10 @@ script = ExtResource("1_7mmxv")
 sprite_frames = SubResource("SpriteFrames_kywqf")
 animation = &"Activate"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Lever"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever/Area2D"]
 shape = SubResource("RectangleShape2D_7mmxv")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Lever/Area2D" to="." method="_on_lever_area_entered"]
+[connection signal="body_exited" from="Lever/Area2D" to="." method="_on_lever_area_exited"]
