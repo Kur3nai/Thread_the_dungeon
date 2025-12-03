@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://b3qyh727u1wl1"]
+[gd_scene load_steps=25 format=4 uid="uid://b3qyh727u1wl1"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_40f36"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_w03c6"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="10_p4ns1"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="11_c8pm5"]
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="11_nxjxt"]
-[ext_resource type="Script" uid="uid://duxyrrbjhhas4" path="res://scripts/Setting/panel.gd" id="12_p4ns1"]
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="12_rqfpl"]
 [ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="13_c8pm5"]
 [ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/HorizontalMovingPlatform.tscn" id="13_p4ns1"]
@@ -537,21 +536,7 @@ move_width = 200.0
 
 [node name="Death" parent="." instance=ExtResource("11_nxjxt")]
 
-[node name="PauseMenu" type="Panel" parent="."]
-process_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("12_p4ns1")
-
-[node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("13_c8pm5")]
-layout_mode = 1
-offset_left = 564.0
-offset_top = 294.0
-offset_right = 564.0
-offset_bottom = 294.0
+[node name="Pause_Menu" parent="." instance=ExtResource("13_c8pm5")]
 
 [connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]
 [connection signal="visibility_changed" from="Letter" to="ShadyX" method="_on_letter_visibility_changed"]

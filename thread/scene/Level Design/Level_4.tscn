@@ -476,9 +476,11 @@ scale = Vector2(2, 2)
 position = Vector2(114, 272)
 letter = NodePath("../Letter")
 
-[node name="ShadyX" parent="." instance=ExtResource("12_ln217")]
+[node name="ShadyX" parent="." node_paths=PackedStringArray("death_screen", "directional_light") instance=ExtResource("12_ln217")]
 z_index = 5
 position = Vector2(53, 583)
+death_screen = NodePath("../Death")
+directional_light = NodePath("../DirectionalLight2D")
 
 [node name="Letter" type="Button" parent="."]
 process_mode = 3
