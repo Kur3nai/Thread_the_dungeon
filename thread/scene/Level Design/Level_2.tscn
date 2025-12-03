@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://5hgo02n1gd6j"]
+[gd_scene load_steps=25 format=4 uid="uid://5hgo02n1gd6j"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_kemnw"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_fsml6"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b7ox77f1oc7fq" path="res://scene/Mechanics/HorizontalMovingPlatform.tscn" id="11_6714m"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="12_6714m"]
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="12_mehro"]
-[ext_resource type="Script" uid="uid://duxyrrbjhhas4" path="res://scripts/Setting/panel.gd" id="13_mjomw"]
 [ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="14_ieirm"]
 
 [sub_resource type="TileSet" id="TileSet_dktqr"]
@@ -495,17 +494,7 @@ move_width = 200.0
 
 [node name="Death" parent="." instance=ExtResource("12_mehro")]
 
-[node name="PauseMenu" type="Panel" parent="."]
-process_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("13_mjomw")
-
-[node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("14_ieirm")]
-layout_mode = 1
+[node name="Pause_Menu" parent="." instance=ExtResource("14_ieirm")]
 offset_left = 564.0
 offset_top = 294.0
 offset_right = 564.0
