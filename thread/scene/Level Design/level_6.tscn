@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=4 uid="uid://ddl44x2g4766p"]
+[gd_scene load_steps=12 format=4 uid="uid://ddl44x2g4766p"]
 
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_xj12b"]
 [ext_resource type="PackedScene" uid="uid://djnbn776hdrg7" path="res://scene/Mechanics/VerticalMovingPlatform.tscn" id="2_024u8"]
 [ext_resource type="PackedScene" uid="uid://dslhvgulwx6x7" path="res://scene/Mechanics/Character.tscn" id="3_024u8"]
 [ext_resource type="PackedScene" uid="uid://cfmlskvrau13d" path="res://scene/Mechanics/lamp.tscn" id="4_cfhky"]
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="5_ore10"]
+[ext_resource type="PackedScene" uid="uid://d08gisouecqre" path="res://scene/Mechanics/lever.tscn" id="6_64yot"]
+[ext_resource type="PackedScene" uid="uid://vh7ensn2sm1p" path="res://scene/Mechanics/Trapdoor.tscn" id="7_8pcke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04bty"]
 texture = ExtResource("1_xj12b")
@@ -229,10 +231,10 @@ move_height = 200.0
 is_activated = false
 
 [node name="ShadyX" parent="." instance=ExtResource("3_024u8")]
-position = Vector2(48, 599)
+position = Vector2(421, 82)
 
 [node name="Lamp" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("4_cfhky")]
-position = Vector2(481, 415)
+position = Vector2(840, -74)
 activated_node = NodePath("../Moving Platform")
 platform_holder = true
 
@@ -241,11 +243,17 @@ position = Vector2(866, 255)
 activated_node = NodePath("../Moving Platform")
 platform_holder = true
 
-[node name="Lamp3" parent="." instance=ExtResource("4_cfhky")]
-position = Vector2(465, 95)
-
 [node name="Lamp4" parent="." instance=ExtResource("4_cfhky")]
 position = Vector2(959, 64)
+light_size = 10.0
 
 [node name="Light" parent="." instance=ExtResource("5_ore10")]
 position = Vector2(259, 405)
+
+[node name="Lever" parent="." node_paths=PackedStringArray("trapdoor_holder") instance=ExtResource("6_64yot")]
+position = Vector2(483, 97)
+trapdoor_holder = NodePath("../Trapdoor")
+
+[node name="Trapdoor" parent="." instance=ExtResource("7_8pcke")]
+position = Vector2(849.00006, 49)
+scale = Vector2(-3, 3)
