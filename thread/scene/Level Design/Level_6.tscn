@@ -387,7 +387,6 @@ energy = 0.9
 blend_mode = 1
 
 [node name="Death" parent="." instance=ExtResource("11_ayf08")]
-visible = false
 
 [node name="Text_interacter" parent="." instance=ExtResource("12_kf6di")]
 position = Vector2(1130, 88)
