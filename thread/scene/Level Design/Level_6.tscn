@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ddl44x2g4766p"]
+[gd_scene load_steps=17 format=4 uid="uid://ddl44x2g4766p"]
 
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_xj12b"]
 [ext_resource type="PackedScene" uid="uid://djnbn776hdrg7" path="res://scene/Mechanics/VerticalMovingPlatform.tscn" id="2_024u8"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://wnvlnsgd0l1o" path="res://scene/Mechanics/door.tscn" id="9_h3257"]
 [ext_resource type="PackedScene" uid="uid://bjlhaowh6h5vu" path="res://scene/Mechanics/Runes/Vision Rune.tscn" id="10_ayf08"]
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="11_ayf08"]
+[ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="12_kf6di"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04bty"]
 texture = ExtResource("1_xj12b")
@@ -359,8 +360,12 @@ vision_increase = 300.0
 duration = 2.0
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
 [node name="Death" parent="." instance=ExtResource("11_ayf08")]
 visible = false
+
+[node name="Text_interacter" parent="." instance=ExtResource("12_kf6di")]
+position = Vector2(1130, 88)

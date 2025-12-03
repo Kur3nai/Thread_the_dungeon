@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bseu5alhmd21l"]
+[gd_scene load_steps=15 format=4 uid="uid://bseu5alhmd21l"]
 
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="1_j2cbe"]
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_wro6f"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://x1jn6h6qt1uk" path="res://scene/Mechanics/Light.tscn" id="6_u45o2"]
 [ext_resource type="PackedScene" uid="uid://ykxlmh4da2h" path="res://scene/Mechanics/Runes/Speed Rune.tscn" id="7_jtviw"]
 [ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="8_v0xfu"]
+[ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="10_4x0sa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vc27v"]
 texture = ExtResource("1_wro6f")
@@ -340,3 +341,6 @@ jump_increase = 400
 visible = false
 energy = 0.9
 blend_mode = 1
+
+[node name="Text_interacter" parent="." instance=ExtResource("10_4x0sa")]
+position = Vector2(1126, 118)
