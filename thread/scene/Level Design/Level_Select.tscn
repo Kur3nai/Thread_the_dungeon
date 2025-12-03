@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://djevhy0ttwdxp"]
+
+[node name="Level_Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level_Container1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 115.0
+offset_right = -57.0
+offset_bottom = -333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Level_1_Button" type="Button" parent="Level_Container1"]
+layout_mode = 2
+size_flags_horizontal = 7
+
+[node name="Level_2_Button" type="Button" parent="Level_Container1"]
+layout_mode = 2
+size_flags_horizontal = 7
+
+[node name="Level_3_Button" type="Button" parent="Level_Container1"]
+layout_mode = 2
+size_flags_horizontal = 7
+
+[node name="Level_4_Button" type="Button" parent="Level_Container1"]
+layout_mode = 2
+size_flags_horizontal = 7
+
+[node name="Level_Container2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 165.0
+offset_top = 349.0
+offset_right = -187.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 118
+
+[node name="Level_5_Button" type="Button" parent="Level_Container2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Level_6_Button" type="Button" parent="Level_Container2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Level_7_Button" type="Button" parent="Level_Container2"]
+layout_mode = 2
+size_flags_horizontal = 3
