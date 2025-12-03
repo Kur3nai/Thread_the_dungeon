@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://djevhy0ttwdxp"]
+[gd_scene load_steps=2 format=3 uid="uid://djevhy0ttwdxp"]
+
+[ext_resource type="Script" uid="uid://bv0jffxxpf55" path="res://scene/Level Design/level_select.gd" id="1_0q1py"]
 
 [node name="Level_Select" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0q1py")
 
 [node name="Level_Container1" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -24,18 +27,26 @@ theme_override_constants/separation = 100
 [node name="Level_1_Button" type="Button" parent="Level_Container1"]
 layout_mode = 2
 size_flags_horizontal = 7
+theme_override_font_sizes/font_size = 72
+text = "1"
 
 [node name="Level_2_Button" type="Button" parent="Level_Container1"]
 layout_mode = 2
 size_flags_horizontal = 7
+theme_override_font_sizes/font_size = 72
+text = "2"
 
 [node name="Level_3_Button" type="Button" parent="Level_Container1"]
 layout_mode = 2
 size_flags_horizontal = 7
+theme_override_font_sizes/font_size = 72
+text = "3"
 
 [node name="Level_4_Button" type="Button" parent="Level_Container1"]
 layout_mode = 2
 size_flags_horizontal = 7
+theme_override_font_sizes/font_size = 72
+text = "4"
 
 [node name="Level_Container2" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -53,11 +64,25 @@ theme_override_constants/separation = 118
 [node name="Level_5_Button" type="Button" parent="Level_Container2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 72
+text = "5"
 
 [node name="Level_6_Button" type="Button" parent="Level_Container2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 72
+text = "6"
 
 [node name="Level_7_Button" type="Button" parent="Level_Container2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 72
+text = "7"
+
+[connection signal="pressed" from="Level_Container1/Level_1_Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level_Container1/Level_2_Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="Level_Container1/Level_3_Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="Level_Container1/Level_4_Button" to="." method="_on_level_4_button_pressed"]
+[connection signal="pressed" from="Level_Container2/Level_5_Button" to="." method="_on_level_5_button_pressed"]
+[connection signal="pressed" from="Level_Container2/Level_6_Button" to="." method="_on_level_6_button_pressed"]
+[connection signal="pressed" from="Level_Container2/Level_7_Button" to="." method="_on_level_7_button_pressed"]
