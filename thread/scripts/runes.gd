@@ -6,7 +6,7 @@ enum RuneType {HAS_DARKVISION, INCREASE_SPEED, INCREASE_JUMP, INCREASE_VISION_RA
 @export var speed_increase: int = 0
 @export var jump_increase: int = 0
 @export var vision_increase: float = 0
-@export var duration: float = 5.0   # <<--- NEW: effect lasts 5 seconds
+@export var duration: float = 0
 
 @onready var light_area: PointLight2D = $LightArea
 
