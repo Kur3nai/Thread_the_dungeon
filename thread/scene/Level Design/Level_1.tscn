@@ -357,7 +357,7 @@ texture = SubResource("GradientTexture2D_2g8lx")
 position = Vector2(223, 622)
 
 [node name="Lamp" parent="." instance=ExtResource("5_a8wv2")]
-position = Vector2(345, 530)
+position = Vector2(448, 334)
 
 [node name="Jump_Rune" parent="." instance=ExtResource("12_2g8lx")]
 position = Vector2(745, 425)

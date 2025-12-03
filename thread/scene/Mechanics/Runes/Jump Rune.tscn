@@ -7,12 +7,12 @@
 radius = 1.2000006
 height = 4.8000007
 
-[sub_resource type="Gradient" id="Gradient_too18"]
-offsets = PackedFloat32Array(0, 0.74)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_vet3s"]
+offsets = PackedFloat32Array(0, 0.26666668, 0.48666668, 0.7)
+colors = PackedColorArray(1, 1, 1, 1, 0.4522645, 0.4522645, 0.4522645, 1, 0.14655167, 0.14655167, 0.14655167, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_eaaig"]
-gradient = SubResource("Gradient_too18")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kabcl"]
+gradient = SubResource("Gradient_vet3s")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -40,6 +40,6 @@ shape = SubResource("CapsuleShape2D_vet3s")
 [node name="LightArea" type="PointLight2D" parent="."]
 scale = Vector2(3.034, 2.51)
 color = Color(1, 1, 0.28235295, 1)
-texture = SubResource("GradientTexture2D_eaaig")
+texture = SubResource("GradientTexture2D_kabcl")
 
 [connection signal="body_entered" from="Jump/Area2D" to="." method="_on_pickup_range_entered"]

@@ -4,6 +4,7 @@ var player_in_area = false
 var player:Node = null
 @onready var torch: Sprite2D = $Torch
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var light_area2: PointLight2D = $PointLight2D
 @onready var light_area:PointLight2D = torch.get_node("LightArea");
 @export var activated_node:Node2D
 @export var platform_holder:bool = false;
@@ -36,8 +37,10 @@ func _process(delta: float) -> void:
 
 	if Global.letter_visible:
 		light_area.visible = false;
+		light_area2.visible = false;
 	else:
 		light_area.visible = true;
+		light_area2.visible = true;
 
 func _manipulate_platform() -> void: 
 	activated_node.is_activated = !activated_node.is_activated;
