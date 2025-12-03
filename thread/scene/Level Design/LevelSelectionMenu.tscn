@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt60o0ah68c4k"]
+
+[ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="2_ho1g8"]
+
+[sub_resource type="GDScript" id="GDScript_wnrtg"]
+resource_name = "LevelSelect"
+script/source = "extends Control
+
+@onready var Levels: Array = [$LevelIcon, $LevelIcon2, $LevelIcon3, $LevelIcon4]
+var CurrentLevel: int = 0
+
+
+
+func _on_button_pressed():
+	CurrentLevel = 0
+	get_tree().change_scene_to_file(\"res://scene/Level Design/Level_1.tscn\")
+
+
+func _on_button_2_pressed():
+	CurrentLevel = 1
+	get_tree().change_scene_to_file(\"res://scene/Level Design/Level_2.tscn\")
+
+
+func _on_button_3_pressed():
+	CurrentLevel = 2
+	get_tree().change_scene_to_file(\"res://scene/Level Design/Level_3.tscn\")
+
+
+func _on_button_4_pressed():
+	CurrentLevel = 3
+	get_tree().change_scene_to_file(\"res://scene/Level Design/Level_4.tscn\")
+"
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 284.0
+offset_top = 104.0
+offset_right = 324.0
+offset_bottom = 144.0
+script = SubResource("GDScript_wnrtg")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -228.0
+offset_top = -60.0
+offset_right = -34.0
+offset_bottom = 76.0
+text = "Level 1"
+icon = ExtResource("2_ho1g8")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -56.0
+offset_right = 227.0
+offset_bottom = 80.0
+text = "Level 2"
+icon = ExtResource("2_ho1g8")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = -55.0
+offset_right = 517.0
+offset_bottom = 81.0
+text = "Level 3"
+icon = ExtResource("2_ho1g8")
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = -55.0
+offset_right = 746.0
+offset_bottom = 81.0
+text = "Level 4"
+icon = ExtResource("2_ho1g8")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
