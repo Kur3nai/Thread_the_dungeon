@@ -402,13 +402,12 @@ offset_bottom = 294.33545
 scale = Vector2(0.46989048, 0.55206156)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Dear Madoc,
+text = "To: Thrain,
 
-Evacuations have begun and the monsters are coming. 
-Remind the people that Luminus will lead the way forth. 
+The war wasn't your fault. We know the swords weren't made by you. 
+Stop blaming yourself for their deaths. We'll always be here for you, no matter how long it takes.
 
-Paos
-"
+From: Paos"
 
 [node name="Label" type="Label" parent="Letter"]
 modulate = Color(0.11091188, 0.098552816, 0.13990334, 1)

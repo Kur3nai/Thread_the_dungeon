@@ -423,12 +423,7 @@ offset_bottom = 294.33545
 scale = Vector2(0.46989048, 0.55206156)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Dear Madoc,
-
-Evacuations have begun and the monsters are coming. 
-Remind the people that Luminus will lead the way forth. 
-
-Paos
+text = "Hey, remind the new recruits to watch where they're going. Use the torches or their darkvision scrolls if need be. Those idiot goblins won't know what hit them.
 "
 
 [node name="Label" type="Label" parent="Letter"]
