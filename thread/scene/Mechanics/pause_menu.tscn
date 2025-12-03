@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wfwuq")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,30 +20,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Panel2"]
+custom_minimum_size = Vector2(10000, 10000)
+layout_mode = 1
+offset_left = -5000.0
+offset_top = -5000.0
+offset_right = 5000.0
+offset_bottom = 5000.0
+color = Color(0.13803378, 0.13803375, 0.13803375, 1)
+
+[node name="Panel" type="Panel" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -147.0
-offset_top = -59.0
-offset_right = 52.0
-offset_bottom = 59.0
+offset_left = 409.0
+offset_top = 245.0
+offset_right = 608.0
+offset_bottom = 363.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5884068, 1.5884068)
 
-[node name="Resume_Button" type="Button" parent="VBoxContainer"]
+[node name="Resume_Button" type="Button" parent="Panel2/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Resume"
 
-[node name="MainMenu_Button" type="Button" parent="VBoxContainer"]
+[node name="MainMenu_Button" type="Button" parent="Panel2/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Main Menu"
 
-[connection signal="pressed" from="VBoxContainer/Resume_Button" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenu_Button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Panel2/VBoxContainer/Resume_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel2/VBoxContainer/MainMenu_Button" to="." method="_on_main_menu_button_pressed"]

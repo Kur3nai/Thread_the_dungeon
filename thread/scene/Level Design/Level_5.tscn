@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bseu5alhmd21l"]
+[gd_scene load_steps=24 format=4 uid="uid://bseu5alhmd21l"]
 
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="1_j2cbe"]
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_wro6f"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://ykxlmh4da2h" path="res://scene/Mechanics/Runes/Speed Rune.tscn" id="7_jtviw"]
 [ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="8_v0xfu"]
 [ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="10_4x0sa"]
-[ext_resource type="Script" uid="uid://duxyrrbjhhas4" path="res://scripts/Setting/panel.gd" id="11_4sxqy"]
 [ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="12_f0ofa"]
 [ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="13_odmyg"]
 [ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="14_f5ch4"]
@@ -370,17 +369,7 @@ blend_mode = 1
 [node name="Text_interacter" parent="." instance=ExtResource("10_4x0sa")]
 position = Vector2(1126, 118)
 
-[node name="PauseMenu" type="Panel" parent="."]
-process_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("11_4sxqy")
-
-[node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("12_f0ofa")]
-layout_mode = 1
+[node name="Pause_Menu" parent="." instance=ExtResource("12_f0ofa")]
 offset_left = 564.0
 offset_top = 294.0
 offset_right = 564.0
