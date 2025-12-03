@@ -376,7 +376,6 @@ rune_type = 3
 vision_increase = 2000.0
 
 [node name="DeathScreen" parent="." instance=ExtResource("15_dsoow")]
-visible = false
 
 [node name="Lever" parent="." node_paths=PackedStringArray("trapdoor_holder") instance=ExtResource("15_5wq3n")]
 position = Vector2(158, 585)

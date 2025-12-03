@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4o3dhh24ye5p"]
 
-[ext_resource type="Script" uid="uid://cttdaygrekt64" path="res://scene/Mechanics/pause_button.gd" id="1_s8n1b"]
+[ext_resource type="Script" uid="uid://cttdaygrekt64" path="res://scripts/pause_button.gd" id="1_s8n1b"]
 [ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="1_vltw7"]
 
 [node name="Pause_button" type="Button"]
