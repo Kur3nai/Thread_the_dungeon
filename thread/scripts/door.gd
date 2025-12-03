@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ShadyX"):
+		Global.max_level+=1
 		var current_scene:String = get_tree().current_scene.name
 		if current_scene == "Level_1":
 			get_tree().change_scene_to_file("res://scene/Level Design/Level_2.tscn")
