@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ykxlmh4da2h"]
 
 [ext_resource type="Script" uid="uid://u4pwds2wpa1h" path="res://scripts/runes.gd" id="1_ey2ma"]
-[ext_resource type="Texture2D" uid="uid://q060ku8lguli" path="res://assets/Png/Game Jam  Interactibles.png" id="2_ey2ma"]
+[ext_resource type="Texture2D" uid="uid://cbq0r1p1m6t6f" path="res://assets/Png/Game Jam  Interactibles.png" id="2_ey2ma"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ey2ma"]
 radius = 1.1500006

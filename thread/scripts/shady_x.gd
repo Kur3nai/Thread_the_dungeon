@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var light_area: PointLight2D = $LightArea
 @onready var torch: Node2D = $Torch
 @export var vision_radius:float = 8.0;
+var is_dead = false
 var vision_size:Vector2 = Vector2(vision_radius, vision_radius);
 @export var vision_cooldown:float = 2.0;
 @export var vision_reduction_speed:float = 3.0;
@@ -20,6 +21,9 @@ func _ready() -> void:
 	light_area.scale = Vector2(base_vision_radius, base_vision_radius);
 
 func _physics_process(delta: float) -> void:
+	if is_dead: 
+		return
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -81,3 +85,18 @@ func show_message(text):
 
 func hide_message():
 	$pick_up.hide()
+	
+#death function
+func die():
+	if is_dead:
+		return
+
+	is_dead = true
+	velocity = Vector2.ZERO  
+	animation_player.play("Death")
+	#deathScreen just need to add a death screen and then link
+	#ui.visible = true        
+
+	await get_tree().create_timer(4).timeout
+
+	get_tree().reload_current_scene()

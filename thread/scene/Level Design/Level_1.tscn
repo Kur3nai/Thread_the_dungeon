@@ -280,6 +280,7 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_cabnn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -362,6 +363,7 @@ activated_node = NodePath("../Trapdoor Manager")
 platform_holder = true
 
 [node name="Trapdoor Manager" parent="." instance=ExtResource("14_pq22v")]
+visible = false
 position = Vector2(161, 534)
 
 [node name="Jump_Rune" parent="." instance=ExtResource("12_2g8lx")]
