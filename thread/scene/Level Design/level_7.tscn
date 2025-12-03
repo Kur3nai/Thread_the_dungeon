@@ -338,3 +338,7 @@ scale = Vector2(2, 2)
 
 [node name="Jump_Rune" parent="." instance=ExtResource("7_q5c7y")]
 position = Vector2(158, 539)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.9
+blend_mode = 1

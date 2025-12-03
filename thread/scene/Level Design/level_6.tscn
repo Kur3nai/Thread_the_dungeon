@@ -246,7 +246,7 @@ position = Vector2(866, 255)
 activated_node = NodePath("../Moving Platform")
 platform_holder = true
 
-[node name="Lamp4" parent="." instance=ExtResource("4_cfhky")]
+[node name="Door_linked_lamp" parent="." instance=ExtResource("4_cfhky")]
 position = Vector2(959, 64)
 light_size = 10.0
 
@@ -351,3 +351,7 @@ scale = Vector2(2, 2)
 
 [node name="Vision_Rune" parent="." instance=ExtResource("10_ayf08")]
 position = Vector2(193, 478)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.9
+blend_mode = 1

@@ -5,9 +5,10 @@ extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var light_area: PointLight2D = $LightArea
 @onready var torch: Node2D = $Torch
-@onready var death_screen: Node2D = $"../DeathScreen"
+@export var death_screen: Node2D
+@export var directional_light: DirectionalLight2D
 @export var vision_radius:float = 8.0;
-var is_dead = false
+var is_dead:bool = false
 var vision_size:Vector2 = Vector2(vision_radius, vision_radius);
 @export var vision_cooldown:float = 2.0;
 @export var vision_reduction_speed:float = 3.0;
@@ -95,11 +96,15 @@ func die():
 	is_dead = true
 	velocity = Vector2.ZERO  
 	animation_player.play("Death")
+
+
 	#death sfx oso
 	await get_tree().create_timer(4).timeout
 	#deathScreen just need to add a death screen and then link
-	death_screen.visible = true    
+	directional_light.visible = false;
+	death_screen.visible = true
 	await get_tree().create_timer(4).timeout
+	directional_light.visible = true;
 	get_tree().reload_current_scene()
 
 
