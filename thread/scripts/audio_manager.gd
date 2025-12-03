@@ -3,12 +3,13 @@ extends AudioStreamPlayer
 # Make sure the AudioStreamPlayer node is named exactly this
 @onready var music_player:AudioStreamPlayer = $"."
 
+const Menu:String = "res://assets/Audio/The Dungeon Dive.mp3"
 const Level1:String = "res://assets/Audio/The Abandoned Hall.mp3"
 const Level2:String = "res://assets/Audio/A Traveller's Respite.mp3"
 const Level3:String = "res://assets/Audio/The End of the Road.mp3"
 
 const scene_map := {
-	"Main": Level1,
+	"Main": Menu,
 	"Scene 1": Level1,
 	"Scene 2": Level2,
 	"Scene 3": Level3
