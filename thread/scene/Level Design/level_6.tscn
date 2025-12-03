@@ -255,5 +255,6 @@ position = Vector2(483, 97)
 trapdoor_holder = NodePath("../Trapdoor")
 
 [node name="Trapdoor" parent="." instance=ExtResource("7_8pcke")]
-position = Vector2(849.00006, 49)
+position = Vector2(913.00006, 39.000004)
+rotation = -1.5707964
 scale = Vector2(-3, 3)
