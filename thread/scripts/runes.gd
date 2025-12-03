@@ -2,9 +2,9 @@ extends Node2D
 
 enum RuneType {HAS_DARKVISION, INCREASE_SPEED, INCREASE_JUMP, INCREASE_VISION_RADIUS}
 @export var rune_type: RuneType = RuneType.HAS_DARKVISION
-@export var speed_increase: int = 50
-@export var jump_increase: int = -100
-@export var vision_increase: float = 5.0
+@export var speed_increase: int = 0
+@export var jump_increase: int = 0
+@export var vision_increase: float = 0
 @onready var light_area: PointLight2D = $LightArea
 
 func _on_pickup_range_entered(body: Node2D):
@@ -13,11 +13,11 @@ func _on_pickup_range_entered(body: Node2D):
 			RuneType.HAS_DARKVISION:
 				Global.Has_Darkvision = true
 			RuneType.INCREASE_SPEED:
-				Global.Speed += 50
+				Global.Speed += speed_increase
 			RuneType.INCREASE_JUMP:
-				Global.Jump_Velocity -= 100
+				Global.Jump_Velocity -= jump_increase
 			RuneType.INCREASE_VISION_RADIUS:
-				body.vision_radius += 5
+				body.vision_radius += vision_increase
 				if Global.Has_Darkvision: 
 					body.vision_size = Vector2(body.vision_radius, body.vision_radius)
 		queue_free()
