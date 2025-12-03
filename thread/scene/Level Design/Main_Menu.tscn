@@ -85,6 +85,7 @@ theme_override_font_sizes/font_size = 36
 text = "Exit"
 
 [node name="Options_Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 292.0
 offset_top = 206.0
