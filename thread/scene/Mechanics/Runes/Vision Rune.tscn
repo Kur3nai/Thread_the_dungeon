@@ -18,6 +18,7 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="Vision_Rune" type="Node2D"]
 script = ExtResource("1_eaaig")
+vision_increase = 200.0
 
 [node name="Vision" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
