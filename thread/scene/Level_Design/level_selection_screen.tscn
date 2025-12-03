@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://tx6fqtnn1hig"]
+
+[ext_resource type="Script" uid="uid://yl6517hcp3pc" path="res://control.gd" id="1_u0drx"]
+[ext_resource type="Texture2D" uid="uid://bqrcmjloegdv" path="res://icon.svg" id="2_ad8ws"]
+
+[node name="Level_Selection_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0drx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level_1_Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 285.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Level 1"
+icon = ExtResource("2_ad8ws")
+
+[node name="Level_2_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_right = 574.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Level 2"
+icon = ExtResource("2_ad8ws")
+
+[node name="Level_3_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_right = 863.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Level 3"
+icon = ExtResource("2_ad8ws")
+
+[node name="Level_4_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 867.0
+offset_right = 1152.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Level 4"
+icon = ExtResource("2_ad8ws")
+
+[node name="Level_5_Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 140.0
+offset_right = 381.0
+offset_bottom = 276.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Level 5"
+icon = ExtResource("2_ad8ws")
+
+[node name="Level_6_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 140.0
+offset_right = 766.0
+offset_bottom = 276.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Level 6"
+icon = ExtResource("2_ad8ws")
+
+[node name="Level_7_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 140.0
+offset_right = 1152.0
+offset_bottom = 276.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Level 7"
+icon = ExtResource("2_ad8ws")
+
+[connection signal="pressed" from="Level_1_Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level_2_Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="Level_3_Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="Level_4_Button" to="." method="_on_level_4_button_pressed"]
+[connection signal="pressed" from="Level_5_Button" to="." method="_on_level_5_button_pressed"]
+[connection signal="pressed" from="Level_6_Button" to="." method="_on_level_6_button_pressed"]
+[connection signal="pressed" from="Level_7_Button" to="." method="_on_level_7_button_pressed"]

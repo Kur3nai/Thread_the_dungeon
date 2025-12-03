@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bjlhaowh6h5vu" path="res://scene/Mechanics/Runes/Vision Rune.tscn" id="11_iab5d"]
 [ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="12_2g8lx"]
 [ext_resource type="PackedScene" uid="uid://ykxlmh4da2h" path="res://scene/Mechanics/Runes/Speed Rune.tscn" id="13_pq22v"]
-[ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="15_dsoow"]
+[ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level_Design/Death_Screen.tscn" id="15_dsoow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cabnn"]
 texture = ExtResource("1_s6gvh")
