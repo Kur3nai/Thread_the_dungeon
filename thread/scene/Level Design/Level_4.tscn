@@ -504,12 +504,10 @@ offset_bottom = 231.41812
 scale = Vector2(0.439253, 0.5268741)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "Whoever may yet be alive
-
-I hope you may face a better fate than us. 
-Beyond this door is a tunnel system used by rogues of the
-Red Moon Cartel. Beware of its traps and what may lie at 
-the end of the tunnel."
+text = "We harnessed powers we shouldn't have had...
+The Cult, they took Gwendolyn away...
+I'm sorry- I shouldn't have pledged my loyalty to Noctyrio...
+My dear love, I'll be with you shortly."
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Letter"]
