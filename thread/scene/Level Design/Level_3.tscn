@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b3qyh727u1wl1"]
+[gd_scene load_steps=23 format=4 uid="uid://b3qyh727u1wl1"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_40f36"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="2_w03c6"]
@@ -425,6 +425,15 @@ texture = ExtResource("6_4myy0")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3u4f"]
 texture = ExtResource("6_4myy0")
 
+[sub_resource type="Gradient" id="Gradient_6x7h6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.50666666, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.3118496, 0.31184962, 0.3118496, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e3u4f"]
+gradient = SubResource("Gradient_6x7h6")
+use_hdr = true
+
 [node name="Level_3" type="Node2D"]
 
 [node name="TileMap" type="TileMapLayer" parent="."]
@@ -439,7 +448,6 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAA
 tile_set = SubResource("TileSet_ecifp")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -505,6 +513,13 @@ offset_right = 238.32849
 offset_bottom = 140.17633
 theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
 text = "Click to close"
+
+[node name="PointLight2D" type="PointLight2D" parent="Letter"]
+position = Vector2(191.0141, 77.952194)
+scale = Vector2(5.8174505, 2.297891)
+color = Color(1, 1, 0.33333334, 1)
+energy = 0.5
+texture = SubResource("GradientTexture2D_e3u4f")
 
 [node name="Moving Platform" parent="." instance=ExtResource("13_p4ns1")]
 position = Vector2(533, 222)

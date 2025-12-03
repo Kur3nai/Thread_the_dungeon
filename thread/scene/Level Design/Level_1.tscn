@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bhcfbggnsdsjb"]
+[gd_scene load_steps=26 format=4 uid="uid://bhcfbggnsdsjb"]
 
 [ext_resource type="Texture2D" uid="uid://dug1ssqs6u3kk" path="res://assets/Png/Tileset.png" id="1_s6gvh"]
 [ext_resource type="Texture2D" uid="uid://bk0qawrnn7hoj" path="res://assets/Png/Game Jam .png" id="3_bqeqd"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bjlhaowh6h5vu" path="res://scene/Mechanics/Runes/Vision Rune.tscn" id="11_iab5d"]
 [ext_resource type="PackedScene" uid="uid://tvyh6djtex0m" path="res://scene/Mechanics/Runes/Jump Rune.tscn" id="12_2g8lx"]
 [ext_resource type="PackedScene" uid="uid://ykxlmh4da2h" path="res://scene/Mechanics/Runes/Speed Rune.tscn" id="13_pq22v"]
-[ext_resource type="PackedScene" uid="uid://vh7ensn2sm1p" path="res://scene/Mechanics/Trapdoor.tscn" id="14_pq22v"]
 [ext_resource type="PackedScene" uid="uid://b87jjqm18orrl" path="res://scene/Level Design/DeathScreen.tscn" id="15_dsoow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cabnn"]
@@ -296,7 +295,7 @@ position = Vector2(1027, 587)
 position = Vector2(483, 436)
 
 [node name="ShadyX" parent="." instance=ExtResource("5_x4vcx")]
-position = Vector2(83, 585)
+position = Vector2(37, 600)
 vision_reduction_speed = 0.1
 
 [node name="Light" parent="." node_paths=PackedStringArray("letter") instance=ExtResource("9_jyb8g")]
@@ -358,14 +357,8 @@ texture = SubResource("GradientTexture2D_2g8lx")
 [node name="Spike" parent="." instance=ExtResource("11_6x7h6")]
 position = Vector2(223, 622)
 
-[node name="Lamp" parent="." node_paths=PackedStringArray("activated_node") instance=ExtResource("5_a8wv2")]
+[node name="Lamp" parent="." instance=ExtResource("5_a8wv2")]
 position = Vector2(345, 530)
-activated_node = NodePath("../Trapdoor Manager")
-platform_holder = true
-
-[node name="Trapdoor Manager" parent="." instance=ExtResource("14_pq22v")]
-visible = false
-position = Vector2(161, 534)
 
 [node name="Jump_Rune" parent="." instance=ExtResource("12_2g8lx")]
 position = Vector2(745, 425)
