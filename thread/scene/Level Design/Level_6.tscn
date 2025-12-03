@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ddl44x2g4766p"]
+[gd_scene load_steps=27 format=4 uid="uid://ddl44x2g4766p"]
 
 [ext_resource type="Texture2D" uid="uid://bxyq7u7xnr2w3" path="res://assets/Png/Spritesheet.png" id="1_xj12b"]
 [ext_resource type="PackedScene" uid="uid://djnbn776hdrg7" path="res://scene/Mechanics/VerticalMovingPlatform.tscn" id="2_024u8"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c71oy03puwipm" path="res://scene/Mechanics/text_interacter.tscn" id="12_kf6di"]
 [ext_resource type="Script" uid="uid://duxyrrbjhhas4" path="res://scripts/Setting/panel.gd" id="13_u08oo"]
 [ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="14_ghraq"]
+[ext_resource type="Texture2D" uid="uid://cc8tc0658hiu8" path="res://assets/Png/Letter background.png" id="15_rplye"]
+[ext_resource type="Script" uid="uid://ck1wj0spxh4sc" path="res://scripts/letter.gd" id="16_24k7m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04bty"]
 texture = ExtResource("1_xj12b")
@@ -220,6 +222,26 @@ tile_size = Vector2i(32, 16)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ore10")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a4bbs"]
+texture = ExtResource("15_rplye")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6epi"]
+texture = ExtResource("15_rplye")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ghcs"]
+texture = ExtResource("15_rplye")
+
+[sub_resource type="LabelSettings" id="LabelSettings_pcffd"]
+
+[sub_resource type="Gradient" id="Gradient_y8nwd"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.50666666, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.3118496, 0.31184962, 0.3118496, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v3gdx"]
+gradient = SubResource("Gradient_y8nwd")
+use_hdr = true
+
 [node name="Level_6" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -367,6 +389,7 @@ energy = 0.9
 blend_mode = 1
 
 [node name="Death" parent="." instance=ExtResource("11_ayf08")]
+visible = false
 
 [node name="Text_interacter" parent="." instance=ExtResource("12_kf6di")]
 position = Vector2(1130, 88)
@@ -386,3 +409,57 @@ offset_left = 564.0
 offset_top = 294.0
 offset_right = 564.0
 offset_bottom = 294.0
+
+[node name="Letter" type="Button" parent="."]
+process_mode = 3
+visible = false
+z_index = 5
+offset_left = 168.0
+offset_top = 166.99997
+offset_right = 546.0
+offset_bottom = 328.99997
+scale = Vector2(2.0892298, 1.894581)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxTexture_a4bbs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k6epi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2ghcs")
+alignment = 0
+script = ExtResource("16_24k7m")
+
+[node name="Letter_word" type="Label" parent="Letter"]
+layout_mode = 0
+offset_left = 59.830666
+offset_top = 25.335438
+offset_right = 680.8307
+offset_bottom = 294.33545
+scale = Vector2(0.46989048, 0.55206156)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Dear Madoc,
+
+Evacuations have begun and the monsters are coming. 
+Remind the people that Luminus will lead the way forth. 
+
+Paos
+"
+
+[node name="Label" type="Label" parent="Letter"]
+modulate = Color(0.11091188, 0.098552816, 0.13990334, 1)
+layout_mode = 0
+offset_left = 138.32849
+offset_top = 117.17633
+offset_right = 238.32849
+offset_bottom = 140.17633
+theme_override_colors/font_color = Color(1, 1, 1, 0.4862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Click to close"
+label_settings = SubResource("LabelSettings_pcffd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Letter"]
+position = Vector2(191.0141, 77.952194)
+scale = Vector2(5.8174505, 2.297891)
+color = Color(1, 1, 0.33333334, 1)
+energy = 0.5
+texture = SubResource("GradientTexture2D_v3gdx")
+
+[connection signal="pressed" from="Letter" to="Letter" method="_on_pressed"]

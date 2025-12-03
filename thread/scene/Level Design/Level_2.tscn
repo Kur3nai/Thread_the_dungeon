@@ -494,11 +494,9 @@ position = Vector2(464, 118)
 move_width = 200.0
 
 [node name="Death" parent="." instance=ExtResource("12_mehro")]
-visible = false
 
 [node name="PauseMenu" type="Panel" parent="."]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -507,7 +505,6 @@ grow_vertical = 2
 script = ExtResource("13_mjomw")
 
 [node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("14_ieirm")]
-visible = false
 layout_mode = 1
 offset_left = 564.0
 offset_top = 294.0
