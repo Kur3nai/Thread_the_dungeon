@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b8ri0mjbgk6fq" path="res://scripts/vertical_platform_manager.gd" id="1_jnksa"]
 [ext_resource type="Texture2D" uid="uid://f0knroom1nn1" path="res://assets/Png/Platform.png" id="2_wupo3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b8oj"]
-size = Vector2(138, 16.000002)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnksa"]
+size = Vector2(95.71553, 15.581541)
 
 [node name="Moving Platform" type="Node2D"]
 script = ExtResource("1_jnksa")
@@ -26,11 +26,9 @@ texture = ExtResource("2_wupo3")
 region_enabled = true
 region_rect = Rect2(0, 0, 96, 15)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Platform"]
-scale = Vector2(1, 0.99999994)
-gravity_scale = 0.0
-lock_rotation = true
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/RigidBody2D"]
-shape = SubResource("RectangleShape2D_3b8oj")
-one_way_collision_margin = 0.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/Sprite2D/StaticBody2D"]
+position = Vector2(0.006136609, -0.0021559177)
+scale = Vector2(1, 0.99999946)
+shape = SubResource("RectangleShape2D_jnksa")
