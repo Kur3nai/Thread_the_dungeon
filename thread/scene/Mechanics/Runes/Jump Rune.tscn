@@ -22,19 +22,19 @@ rune_type = 2
 jump_increase = 300
 duration = 1.0
 
-[node name="Jump" type="Sprite2D" parent="."]
+[node name="Rune_Model" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("2_okg0q")
 hframes = 8
 vframes = 8
 frame = 11
 
-[node name="Area2D" type="Area2D" parent="Jump"]
+[node name="Area2D" type="Area2D" parent="Rune_Model"]
 scale = Vector2(5, 5)
 input_pickable = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jump/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rune_Model/Area2D"]
 position = Vector2(-4.4107435e-07, 0)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("CapsuleShape2D_vet3s")
@@ -44,4 +44,4 @@ scale = Vector2(3.034, 2.51)
 color = Color(1, 1, 0.28235295, 1)
 texture = SubResource("GradientTexture2D_kabcl")
 
-[connection signal="body_entered" from="Jump/Area2D" to="." method="_on_pickup_range_entered"]
+[connection signal="body_entered" from="Rune_Model/Area2D" to="." method="_on_pickup_range_entered"]

@@ -1,15 +1,15 @@
 extends Node2D
 
+# Player stats
 var Speed = 300.0
 var Jump_Velocity = -450.0
-var Has_Darkvision: bool = false 
-static var letter_visible:bool = false;
+var Has_Darkvision: bool = false
+var Vision_Radius: float = 0.0 
+var ActiveRunes: Dictionary = {}  # key: rune_type, value: {value, duration, timer}
+static var letter_visible: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

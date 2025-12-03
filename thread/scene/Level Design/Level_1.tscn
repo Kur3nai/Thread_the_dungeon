@@ -362,10 +362,11 @@ position = Vector2(223, 622)
 position = Vector2(448, 334)
 
 [node name="Jump_Rune" parent="." instance=ExtResource("12_2g8lx")]
-position = Vector2(745, 425)
+position = Vector2(33, 526)
+duration = 5.0
 
 [node name="Speed_Rune" parent="." instance=ExtResource("13_pq22v")]
-position = Vector2(261, 525)
+position = Vector2(291, 525)
 
 [node name="Vision_Rune" parent="." instance=ExtResource("11_iab5d")]
 position = Vector2(914, 471)

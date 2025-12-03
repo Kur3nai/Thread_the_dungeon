@@ -13,33 +13,21 @@ enum RuneType {HAS_DARKVISION, INCREASE_SPEED, INCREASE_JUMP, INCREASE_VISION_RA
 
 func _on_pickup_range_entered(body: Node2D):
 	if body.is_in_group("ShadyX"):
-
 		match rune_type:
-
 			RuneType.HAS_DARKVISION:
 				Global.Has_Darkvision = true
-				start_timer(body)
-
 			RuneType.INCREASE_SPEED:
 				Global.Speed += speed_increase
-				start_timer(body)
-
 			RuneType.INCREASE_JUMP:
 				Global.Jump_Velocity -= jump_increase
-				start_timer(body)
-
 			RuneType.INCREASE_VISION_RADIUS:
 				body.vision_radius += vision_increase
 				if Global.Has_Darkvision:
 					body.vision_size = Vector2(body.vision_radius, body.vision_radius)
-				start_timer(body)
-
 		queue_free()
 
 
-# -------------------------------
-# TIMER LOGIC
-# -------------------------------
+#timer not working yet
 func start_timer(body):
 	var t := Timer.new()
 	t.wait_time = duration
@@ -50,7 +38,6 @@ func start_timer(body):
 		revert_effect(body)
 		t.queue_free()
 	)
-
 
 func revert_effect(body):
 	match rune_type:
