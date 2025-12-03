@@ -133,10 +133,10 @@ hframes = 8
 vframes = 8
 
 [node name="pick_up" type="Label" parent="."]
-offset_left = 27.0
-offset_top = 24.0
-offset_right = 230.0
-offset_bottom = 47.0
+offset_left = -85.0
+offset_top = -63.0
+offset_right = 118.0
+offset_bottom = -40.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Torch" parent="." instance=ExtResource("3_bwebn")]
