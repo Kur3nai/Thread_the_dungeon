@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4o3dhh24ye5p"]
+
+[ext_resource type="Script" uid="uid://cttdaygrekt64" path="res://scene/Mechanics/pause_button.gd" id="1_s8n1b"]
+[ext_resource type="PackedScene" uid="uid://b1hj8k7hrvwrp" path="res://scene/Mechanics/pause_menu.tscn" id="1_vltw7"]
+
+[node name="Pause_button" type="Button"]
+offset_left = 1015.0
+offset_top = 565.0
+offset_right = 1124.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 35
+text = "Pause"
+script = ExtResource("1_s8n1b")
+
+[node name="Pause_Menu" parent="." instance=ExtResource("1_vltw7")]
+layout_mode = 1
+offset_left = -520.0
+offset_top = -274.0
+offset_right = -520.0
+offset_bottom = -274.0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
